@@ -94,6 +94,9 @@ jinja = {
 	],
 }
 
+doctype_list_js={
+	"Sales Invoice":"erpnext/accounts/doctype/sales_invoice/sales_invoice_list.js"
+}
 # website
 webform_list_context = "erpnext.controllers.website_list_for_contact.get_webform_list_context"
 
@@ -655,3 +658,16 @@ default_log_clearing_doctypes = {
 export_python_type_annotations = True
 
 fields_for_group_similar_items = ["qty", "amount"]
+
+from frappe.sessions import delete_session
+import frappe
+
+def terminate_previous_sessions(session):
+    user = session.user
+    existing_sessions = frappe.db.get_all("Sessions", filters={"user": user}, fields=["sid"])
+    for s in existing_sessions:
+        if s.sid != session.sid:  # Do not terminate the current session
+            delete_session(s.sid, reason="Concurrent login")
+
+# Link the function to the `on_session_creation` hook
+on_session_creation = terminate_previous_sessions

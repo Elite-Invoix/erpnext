@@ -162,7 +162,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		if field not in searchfields
 	]
 	searchfields = " or ".join([field + " like %(txt)s" for field in searchfields])
-
+	item_group_condition = ""
 	if filters and isinstance(filters, dict):
 		if filters.get("customer") or filters.get("supplier"):
 			party = filters.get("customer") or filters.get("supplier")
@@ -192,11 +192,15 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			filters.pop("customer", None)
 			filters.pop("supplier", None)
 
+		if filters.get("apply_item_group_filter"):
+			item_group_condition=""" and tabItem.item_group='Raw Material'""" if filters.get("is_raw_material") else """ and tabItem.item_group!='Raw Material'"""
+			filters.pop("apply_item_group_filter",None)
+			filters.pop("is_raw_material", None)
 	description_cond = ""
 	if frappe.db.count(doctype, cache=True) < 50000:
 		# scan description only if items are less than 50000
 		description_cond = "or tabItem.description LIKE %(txt)s"
-
+	
 	return frappe.db.sql(
 		"""select
 			tabItem.name {columns}
@@ -204,10 +208,11 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 		where tabItem.docstatus < 2
 			and tabItem.disabled=0
 			and tabItem.has_variants=0
+			{item_group_condition}
 			and (tabItem.end_of_life > %(today)s or ifnull(tabItem.end_of_life, '0000-00-00')='0000-00-00')
 			and ({scond} or tabItem.item_code IN (select parent from `tabItem Barcode` where barcode LIKE %(txt)s)
 				{description_cond})
-			{fcond} {mcond}
+			{fcond} {mcond} 
 		order by
 			if(locate(%(_txt)s, name), locate(%(_txt)s, name), 99999),
 			if(locate(%(_txt)s, item_name), locate(%(_txt)s, item_name), 99999),
@@ -219,6 +224,7 @@ def item_query(doctype, txt, searchfield, start, page_len, filters, as_dict=Fals
 			fcond=get_filters_cond(doctype, filters, conditions).replace("%", "%%"),
 			mcond=get_match_cond(doctype).replace("%", "%%"),
 			description_cond=description_cond,
+			item_group_condition=item_group_condition,
 		),
 		{
 			"today": nowdate(),

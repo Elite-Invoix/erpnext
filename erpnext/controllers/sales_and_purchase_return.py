@@ -403,6 +403,8 @@ def make_return_doc(doctype: str, source_name: str, target_doc=None, return_agai
 			doc.supplier_warehouse = source.supplier_warehouse
 		else:
 			doc.run_method("calculate_taxes_and_totals")
+		if doctype == "Sales Invoice" and doc.get("is_return"):
+			doc.naming_series = 'CN-.YYYY.-.MM.-.#####'
 
 	def update_serial_batch_no(source_doc, target_doc, source_parent, item_details, qty_field):
 		from erpnext.stock.doctype.serial_no.serial_no import get_serial_nos

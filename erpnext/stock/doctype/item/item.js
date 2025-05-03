@@ -56,38 +56,38 @@ frappe.ui.form.on("Item", {
 	},
 
 	refresh: function (frm) {
-		if (frm.doc.is_stock_item) {
-			frm.add_custom_button(
-				__("Stock Balance"),
-				function () {
-					frappe.route_options = {
-						item_code: frm.doc.name,
-					};
-					frappe.set_route("query-report", "Stock Balance");
-				},
-				__("View")
-			);
-			frm.add_custom_button(
-				__("Stock Ledger"),
-				function () {
-					frappe.route_options = {
-						item_code: frm.doc.name,
-					};
-					frappe.set_route("query-report", "Stock Ledger");
-				},
-				__("View")
-			);
-			frm.add_custom_button(
-				__("Stock Projected Qty"),
-				function () {
-					frappe.route_options = {
-						item_code: frm.doc.name,
-					};
-					frappe.set_route("query-report", "Stock Projected Qty");
-				},
-				__("View")
-			);
-		}
+		// if (frm.doc.is_stock_item) {
+		// 	frm.add_custom_button(
+		// 		__("Stock Balance"),
+		// 		function () {
+		// 			frappe.route_options = {
+		// 				item_code: frm.doc.name,
+		// 			};
+		// 			frappe.set_route("query-report", "Stock Balance");
+		// 		},
+		// 		__("View")
+		// 	);
+		// 	frm.add_custom_button(
+		// 		__("Stock Ledger"),
+		// 		function () {
+		// 			frappe.route_options = {
+		// 				item_code: frm.doc.name,
+		// 			};
+		// 			frappe.set_route("query-report", "Stock Ledger");
+		// 		},
+		// 		__("View")
+		// 	);
+		// 	frm.add_custom_button(
+		// 		__("Stock Projected Qty"),
+		// 		function () {
+		// 			frappe.route_options = {
+		// 				item_code: frm.doc.name,
+		// 			};
+		// 			frappe.set_route("query-report", "Stock Projected Qty");
+		// 		},
+		// 		__("View")
+		// 	);
+		// }
 
 		if (frm.doc.is_fixed_asset) {
 			frm.trigger("is_fixed_asset");
@@ -105,29 +105,29 @@ frappe.ui.form.on("Item", {
 				true
 			);
 
-			frm.add_custom_button(
-				__("Show Variants"),
-				function () {
-					frappe.set_route("List", "Item", { variant_of: frm.doc.name });
-				},
-				__("View")
-			);
+			// frm.add_custom_button(
+			// 	__("Show Variants"),
+			// 	function () {
+			// 		frappe.set_route("List", "Item", { variant_of: frm.doc.name });
+			// 	},
+			// 	__("View")
+			// );
 
-			frm.add_custom_button(
-				__("Item Variant Settings"),
-				function () {
-					frappe.set_route("Form", "Item Variant Settings");
-				},
-				__("View")
-			);
+			// frm.add_custom_button(
+			// 	__("Item Variant Settings"),
+			// 	function () {
+			// 		frappe.set_route("Form", "Item Variant Settings");
+			// 	},
+			// 	__("View")
+			// );
 
-			frm.add_custom_button(
-				__("Variant Details Report"),
-				function () {
-					frappe.set_route("query-report", "Item Variant Details", { item: frm.doc.name });
-				},
-				__("View")
-			);
+			// frm.add_custom_button(
+			// 	__("Variant Details Report"),
+			// 	function () {
+			// 		frappe.set_route("query-report", "Item Variant Details", { item: frm.doc.name });
+			// 	},
+			// 	__("View")
+			// );
 
 			if (frm.doc.variant_based_on === "Item Attribute") {
 				frm.add_custom_button(
@@ -178,17 +178,17 @@ frappe.ui.form.on("Item", {
 			erpnext.item.make_dashboard(frm);
 		}
 
-		frm.add_custom_button(__("Duplicate"), function () {
-			var new_item = frappe.model.copy_doc(frm.doc);
-			// Duplicate item could have different name, causing "copy paste" error.
-			if (new_item.item_name === new_item.item_code) {
-				new_item.item_name = null;
-			}
-			if (new_item.item_code === new_item.description || new_item.item_code === new_item.description) {
-				new_item.description = null;
-			}
-			frappe.set_route("Form", "Item", new_item.name);
-		});
+		// frm.add_custom_button(__("Duplicate"), function () {
+		// 	var new_item = frappe.model.copy_doc(frm.doc);
+		// 	// Duplicate item could have different name, causing "copy paste" error.
+		// 	if (new_item.item_name === new_item.item_code) {
+		// 		new_item.item_name = null;
+		// 	}
+		// 	if (new_item.item_code === new_item.description || new_item.item_code === new_item.description) {
+		// 		new_item.description = null;
+		// 	}
+		// 	frappe.set_route("Form", "Item", new_item.name);
+		// });
 
 		const stock_exists = frm.doc.__onload && frm.doc.__onload.stock_exists ? 1 : 0;
 

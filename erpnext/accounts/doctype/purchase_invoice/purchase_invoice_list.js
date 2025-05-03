@@ -52,5 +52,6 @@ frappe.listview_settings["Purchase Invoice"] = {
 		listview.page.add_action_item(__("Payment"), () => {
 			erpnext.bulk_transaction_processing.create(listview, "Purchase Invoice", "Payment Entry");
 		});
+		listview.filter_area.standard_filters_wrapper.find('[data-fieldname="title"]').remove();
 	},
 };

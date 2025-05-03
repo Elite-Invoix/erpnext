@@ -2171,14 +2171,8 @@
  "icon": "fa fa-file-text",
  "idx": 181,
  "is_submittable": 1,
- "links": [
-  {
-   "group": "Reference",
-   "link_doctype": "POS Invoice",
-   "link_fieldname": "consolidated_invoice"
-  }
- ],
- "modified": "2024-07-18 15:30:39.428519",
+ "links": [],
+ "modified": "2025-04-11 02:12:47.376504",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice",

@@ -19,19 +19,14 @@ class Quotation(SellingController):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
-		from frappe.types import DF
-
 		from erpnext.accounts.doctype.payment_schedule.payment_schedule import PaymentSchedule
 		from erpnext.accounts.doctype.pricing_rule_detail.pricing_rule_detail import PricingRuleDetail
-		from erpnext.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import (
-			SalesTaxesandCharges,
-		)
+		from erpnext.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import SalesTaxesandCharges
 		from erpnext.crm.doctype.competitor_detail.competitor_detail import CompetitorDetail
 		from erpnext.selling.doctype.quotation_item.quotation_item import QuotationItem
-		from erpnext.setup.doctype.quotation_lost_reason_detail.quotation_lost_reason_detail import (
-			QuotationLostReasonDetail,
-		)
+		from erpnext.setup.doctype.quotation_lost_reason_detail.quotation_lost_reason_detail import QuotationLostReasonDetail
 		from erpnext.stock.doctype.packed_item.packed_item import PackedItem
+		from frappe.types import DF
 
 		additional_discount_percentage: DF.Float
 		address_display: DF.SmallText | None
@@ -97,9 +92,7 @@ class Quotation(SellingController):
 		shipping_address_name: DF.Link | None
 		shipping_rule: DF.Link | None
 		source: DF.Link | None
-		status: DF.Literal[
-			"Draft", "Open", "Replied", "Partially Ordered", "Ordered", "Lost", "Cancelled", "Expired"
-		]
+		status: DF.Literal["Draft", "Open", "Replied", "Partially Ordered", "Ordered", "Lost", "Cancelled", "Expired"]
 		supplier_quotation: DF.Link | None
 		tax_category: DF.Link | None
 		taxes: DF.Table[SalesTaxesandCharges]
@@ -123,6 +116,56 @@ class Quotation(SellingController):
 		if self.valid_till and getdate(self.valid_till) < getdate(nowdate()):
 			self.indicator_color = "gray"
 			self.indicator_title = "Expired"
+
+	#def before_save(self):
+	#	max_quota = frappe.db.get_value("Quota Usage", self.company, "max_quotes")
+	#	available_quota = frappe.db.get_value("Quota Usage", self.company, "av_quotes")
+	#	if max_quota <= available_quota:
+	#		frappe.throw(_(f"You have reached the maximum number of quotes allowed. <br>Max quotes: {max_quota}, Current quotes: {available_quota}"))
+	#	else:
+	#		frappe.db.set_value("Quota Usage", self.company, "av_quotes", available_quota + 1)
+
+	def before_insert(self):
+		try:
+			# Fetching the max and available quota for the current company
+			user = frappe.session.user  # Get the current logged-in user
+			company = frappe.db.get_value("User", user, "company_name")
+			
+			if user == "admin@invoix.biz" or user == "Administrator":
+				return
+
+			if not company:
+				frappe.throw(_("Unable to fetch the company. Please set a default company for the user."))
+
+			max_quota = frappe.db.get_value("Quota usage", company, "max_quotes")
+			available_quota = frappe.db.get_value("Quota usage", company, "av_quotes")
+
+			# Ensure the fetched values are not None and are integers
+			if max_quota is None or available_quota is None:
+				frappe.throw(_("Quota values could not be retrieved. Please check the 'Quota usage' setup for your company."))
+
+			# Convert values to integers for comparison
+			max_quota = int(max_quota)
+			available_quota = int(available_quota)
+
+			# Validate quotas
+			if available_quota >= max_quota:
+				frappe.throw(
+					_("You have reached the maximum number of Quotation allowed. <br>Max Quotation: {0}, Current Quotation: {1}").format(max_quota, available_quota)
+				)
+			else:
+				# Increment the available quota
+				frappe.db.set_value("Quota usage", company, "av_quotes", available_quota + 1)
+
+		except ValueError:
+			frappe.throw(_("Quota values must be numeric. Please check the 'Quota usage' setup."))
+		except frappe.ValidationError:
+			# Re-raise the ValidationError to avoid duplicate messages
+			raise
+		except Exception as e:
+			# Log unexpected errors and notify the user
+			frappe.log_error(message=str(e), title="Unexpected Error in before_insert")
+			frappe.throw(_("An unexpected error occurred. Please contact support."))
 
 	def validate(self):
 		super().validate()

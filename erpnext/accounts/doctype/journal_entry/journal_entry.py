@@ -45,9 +45,8 @@ class JournalEntry(AccountsController):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
-		from frappe.types import DF
-
 		from erpnext.accounts.doctype.journal_entry_account.journal_entry_account import JournalEntryAccount
+		from frappe.types import DF
 
 		accounts: DF.Table[JournalEntryAccount]
 		amended_from: DF.Link | None
@@ -87,24 +86,7 @@ class JournalEntry(AccountsController):
 		total_credit: DF.Currency
 		total_debit: DF.Currency
 		user_remark: DF.SmallText | None
-		voucher_type: DF.Literal[
-			"Journal Entry",
-			"Inter Company Journal Entry",
-			"Bank Entry",
-			"Cash Entry",
-			"Credit Card Entry",
-			"Debit Note",
-			"Credit Note",
-			"Contra Entry",
-			"Excise Entry",
-			"Write Off Entry",
-			"Opening Entry",
-			"Depreciation Entry",
-			"Exchange Rate Revaluation",
-			"Exchange Gain Or Loss",
-			"Deferred Revenue",
-			"Deferred Expense",
-		]
+		voucher_type: DF.Literal["Journal Entry", "Inter Company Journal Entry", "Bank Entry", "Cash Entry", "Credit Card Entry", "Debit Note", "Credit Note", "Contra Entry", "Excise Entry", "Write Off Entry", "Opening Entry", "Depreciation Entry", "Exchange Rate Revaluation", "Exchange Gain Or Loss", "Deferred Revenue", "Deferred Expense"]
 		write_off_amount: DF.Currency
 		write_off_based_on: DF.Literal["Accounts Receivable", "Accounts Payable"]
 	# end: auto-generated types
@@ -194,6 +176,10 @@ class JournalEntry(AccountsController):
 		self.update_inter_company_jv()
 		self.update_invoice_discounting()
 		self.update_booked_depreciation()
+		self.on_payment_update()
+
+	def on_payment_update(self):
+		frappe.db.set_value("Purchase Invoice", {"name":["in",[row.purchase_invoice for row in self.custom_purchase_invoice]]}, "status", "Paid")
 
 	def on_update_after_submit(self):
 		# Flag will be set on Reconciliation
@@ -230,6 +216,11 @@ class JournalEntry(AccountsController):
 		self.unlink_asset_adjustment_entry()
 		self.update_invoice_discounting()
 		self.update_booked_depreciation(1)
+		self.on_payment_cancel()
+
+
+	def on_payment_cancel(self):
+		frappe.db.set_value("Purchase Invoice", {"name":["in",[row.purchase_invoice for row in self.custom_purchase_invoice]]}, "status", "UnPaid")
 
 	def get_title(self):
 		return self.pay_to_recd_from or self.accounts[0].account
@@ -1681,3 +1672,44 @@ def make_reverse_journal_entry(source_name, target_doc=None):
 	)
 
 	return doclist
+
+
+
+@frappe.whitelist(allow_guest=True)
+def journal_entry_total_amount(purchase_invoices):
+    """
+    Get the total outstanding amount and total taxes and charges for the given Sales Invoices.
+    """
+    
+    purchase_invoices = frappe.parse_json(purchase_invoices)
+    
+    if not purchase_invoices:
+        return {"outstanding_amount": 0, "total_taxes_and_charges": 0}
+    
+    # Handle single invoice case separately
+    if len(purchase_invoices) == 1:
+        query = f"""
+            SELECT 
+                SUM(outstanding_amount) AS outstanding_amount, 
+                SUM(total_taxes_and_charges) AS total_taxes_and_charges
+            FROM 
+                `tabPurchase Invoice` 
+            WHERE 
+                name = '{purchase_invoices[0]}'
+        """
+    else:
+        # Properly format tuple for multiple invoices
+        query = f"""
+            SELECT 
+                SUM(outstanding_amount) AS outstanding_amount, 
+                SUM(total_taxes_and_charges) AS total_taxes_and_charges
+            FROM 
+                `tabPurchase Invoice` 
+            WHERE 
+                name IN {tuple(purchase_invoices)}
+        """
+    
+    result = frappe.db.sql(query, as_dict=True)
+    
+    # Return the result as a dictionary
+    return result[0] if result else {"outstanding_amount": 0, "total_taxes_and_charges": 0}

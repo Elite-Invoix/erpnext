@@ -548,16 +548,8 @@
  "icon": "fa fa-file-text",
  "idx": 176,
  "is_submittable": 1,
- "links": [
-  {
-   "is_child_table": 1,
-   "link_doctype": "Bank Transaction Payments",
-   "link_fieldname": "payment_entry",
-   "parent_doctype": "Bank Transaction",
-   "table_fieldname": "payment_entries"
-  }
- ],
- "modified": "2024-07-18 15:32:29.413598",
+ "links": [],
+ "modified": "2025-04-27 01:12:14.747335",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Journal Entry",

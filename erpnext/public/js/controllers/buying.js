@@ -92,7 +92,7 @@ erpnext.buying = {
 					else {
 						return{
 							query: "erpnext.controllers.queries.item_query",
-							filters: { 'supplier': me.frm.doc.supplier, 'is_purchase_item': 1, 'has_variants': 0}
+							filters: { 'supplier': me.frm.doc.supplier, 'is_purchase_item': 1, 'has_variants': 0,"apply_item_group_filter": 1,"is_raw_material":1 }
 						}
 					}
 				});

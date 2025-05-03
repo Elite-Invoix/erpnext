@@ -111,7 +111,10 @@
   "expenses_included_in_valuation",
   "manufacturing_section",
   "default_operating_cost_account",
-  "dashboard_tab"
+  "dashboard_tab",
+  "subscription_plan_tab",
+  "subscription_plan_section",
+  "plan_type"
  ],
  "fields": [
   {
@@ -801,6 +804,22 @@
    "fieldtype": "Link",
    "label": "Default Operating Cost Account",
    "options": "Account"
+  },
+  {
+   "fieldname": "subscription_plan_tab",
+   "fieldtype": "Tab Break",
+   "label": "Subscription Plan"
+  },
+  {
+   "fieldname": "subscription_plan_section",
+   "fieldtype": "Section Break",
+   "label": "Subscription Plan"
+  },
+  {
+   "fieldname": "plan_type",
+   "fieldtype": "Data",
+   "label": "Plan Type",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-building",
@@ -808,7 +827,7 @@
  "image_field": "company_logo",
  "is_tree": 1,
  "links": [],
- "modified": "2024-07-24 18:17:56.413971",
+ "modified": "2025-02-12 21:37:12.125777",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Company",

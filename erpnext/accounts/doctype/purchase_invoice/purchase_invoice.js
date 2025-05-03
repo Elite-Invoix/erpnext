@@ -74,47 +74,47 @@ erpnext.accounts.PurchaseInvoice = class PurchaseInvoice extends erpnext.buying.
 		const me = this;
 		super.refresh();
 
-		hide_fields(this.frm.doc);
-		// Show / Hide button
-		this.show_general_ledger();
-		erpnext.accounts.ledger_preview.show_accounting_ledger_preview(this.frm);
+		// hide_fields(this.frm.doc);
+		// // Show / Hide button
+		// this.show_general_ledger();
+		// erpnext.accounts.ledger_preview.show_accounting_ledger_preview(this.frm);
 
-		if (doc.update_stock == 1) {
-			this.show_stock_ledger();
-			erpnext.accounts.ledger_preview.show_stock_ledger_preview(this.frm);
-		}
+		// if (doc.update_stock == 1) {
+		// 	this.show_stock_ledger();
+		// 	erpnext.accounts.ledger_preview.show_stock_ledger_preview(this.frm);
+		// }
 
-		if (!doc.is_return && doc.docstatus == 1 && doc.outstanding_amount != 0) {
-			if (doc.on_hold) {
-				this.frm.add_custom_button(
-					__("Change Release Date"),
-					function () {
-						me.change_release_date();
-					},
-					__("Hold Invoice")
-				);
-				this.frm.add_custom_button(
-					__("Unblock Invoice"),
-					function () {
-						me.unblock_invoice();
-					},
-					__("Create")
-				);
-			} else if (!doc.on_hold) {
-				this.frm.add_custom_button(
-					__("Block Invoice"),
-					function () {
-						me.block_invoice();
-					},
-					__("Create")
-				);
-			}
-		}
+		// if (!doc.is_return && doc.docstatus == 1 && doc.outstanding_amount != 0) {
+		// 	if (doc.on_hold) {
+		// 		this.frm.add_custom_button(
+		// 			__("Change Release Date"),
+		// 			function () {
+		// 				me.change_release_date();
+		// 			},
+		// 			__("Hold Invoice")
+		// 		);
+		// 		this.frm.add_custom_button(
+		// 			__("Unblock Invoice"),
+		// 			function () {
+		// 				me.unblock_invoice();
+		// 			},
+		// 			__("Create")
+		// 		);
+		// 	} else if (!doc.on_hold) {
+		// 		this.frm.add_custom_button(
+		// 			__("Block Invoice"),
+		// 			function () {
+		// 				me.block_invoice();
+		// 			},
+		// 			__("Create")
+		// 		);
+		// 	}
+		// }
 
-		if (doc.docstatus == 1 && doc.outstanding_amount != 0 && !doc.on_hold) {
-			this.frm.add_custom_button(__("Payment"), () => this.make_payment_entry(), __("Create"));
-			cur_frm.page.set_inner_btn_group_as_primary(__("Create"));
-		}
+		// if (doc.docstatus == 1 && doc.outstanding_amount != 0 && !doc.on_hold) {
+		// 	this.frm.add_custom_button(__("Payment"), () => this.make_payment_entry(), __("Create"));
+		// 	cur_frm.page.set_inner_btn_group_as_primary(__("Create"));
+		// }
 
 		if (!doc.is_return && doc.docstatus == 1) {
 			if (doc.outstanding_amount >= 0 || Math.abs(flt(doc.outstanding_amount)) < flt(doc.grand_total)) {
@@ -122,60 +122,60 @@ erpnext.accounts.PurchaseInvoice = class PurchaseInvoice extends erpnext.buying.
 			}
 		}
 
-		if (doc.outstanding_amount > 0 && !cint(doc.is_return) && !doc.on_hold) {
-			cur_frm.add_custom_button(
-				__("Payment Request"),
-				function () {
-					me.make_payment_request();
-				},
-				__("Create")
-			);
-		}
+		// if (doc.outstanding_amount > 0 && !cint(doc.is_return) && !doc.on_hold) {
+		// 	cur_frm.add_custom_button(
+		// 		__("Payment Request"),
+		// 		function () {
+		// 			me.make_payment_request();
+		// 		},
+		// 		__("Create")
+		// 	);
+		// }
 
 		if (doc.docstatus === 0) {
-			this.frm.add_custom_button(
-				__("Purchase Order"),
-				function () {
-					erpnext.utils.map_current_doc({
-						method: "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_invoice",
-						source_doctype: "Purchase Order",
-						target: me.frm,
-						setters: {
-							supplier: me.frm.doc.supplier || undefined,
-							schedule_date: undefined,
-						},
-						get_query_filters: {
-							docstatus: 1,
-							status: ["not in", ["Closed", "On Hold"]],
-							per_billed: ["<", 99.99],
-							company: me.frm.doc.company,
-						},
-					});
-				},
-				__("Get Items From")
-			);
+			// this.frm.add_custom_button(
+			// 	__("Purchase Order"),
+			// 	function () {
+			// 		erpnext.utils.map_current_doc({
+			// 			method: "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_invoice",
+			// 			source_doctype: "Purchase Order",
+			// 			target: me.frm,
+			// 			setters: {
+			// 				supplier: me.frm.doc.supplier || undefined,
+			// 				schedule_date: undefined,
+			// 			},
+			// 			get_query_filters: {
+			// 				docstatus: 1,
+			// 				status: ["not in", ["Closed", "On Hold"]],
+			// 				per_billed: ["<", 99.99],
+			// 				company: me.frm.doc.company,
+			// 			},
+			// 		});
+			// 	},
+			// 	__("Get Items From")
+			// );
 
-			this.frm.add_custom_button(
-				__("Purchase Receipt"),
-				function () {
-					erpnext.utils.map_current_doc({
-						method: "erpnext.stock.doctype.purchase_receipt.purchase_receipt.make_purchase_invoice",
-						source_doctype: "Purchase Receipt",
-						target: me.frm,
-						setters: {
-							supplier: me.frm.doc.supplier || undefined,
-							posting_date: undefined,
-						},
-						get_query_filters: {
-							docstatus: 1,
-							status: ["not in", ["Closed", "Completed", "Return Issued"]],
-							company: me.frm.doc.company,
-							is_return: 0,
-						},
-					});
-				},
-				__("Get Items From")
-			);
+			// this.frm.add_custom_button(
+			// 	__("Purchase Receipt"),
+			// 	function () {
+			// 		erpnext.utils.map_current_doc({
+			// 			method: "erpnext.stock.doctype.purchase_receipt.purchase_receipt.make_purchase_invoice",
+			// 			source_doctype: "Purchase Receipt",
+			// 			target: me.frm,
+			// 			setters: {
+			// 				supplier: me.frm.doc.supplier || undefined,
+			// 				posting_date: undefined,
+			// 			},
+			// 			get_query_filters: {
+			// 				docstatus: 1,
+			// 				status: ["not in", ["Closed", "Completed", "Return Issued"]],
+			// 				company: me.frm.doc.company,
+			// 				is_return: 0,
+			// 			},
+			// 		});
+			// 	},
+			// 	__("Get Items From")
+			// );
 
 			if (!this.frm.doc.is_return) {
 				frappe.db.get_single_value("Buying Settings", "maintain_same_rate").then((value) => {
@@ -438,9 +438,9 @@ erpnext.accounts.PurchaseInvoice = class PurchaseInvoice extends erpnext.buying.
 	on_submit() {
 		super.on_submit();
 
-		$.each(this.frm.doc["items"] || [], function (i, row) {
-			if (row.purchase_receipt) frappe.model.clear_doc("Purchase Receipt", row.purchase_receipt);
-		});
+		// $.each(this.frm.doc["items"] || [], function (i, row) {
+		// 	if (row.purchase_receipt) frappe.model.clear_doc("Purchase Receipt", row.purchase_receipt);
+		// });
 	}
 
 	make_debit_note() {
@@ -493,7 +493,8 @@ cur_frm.fields_dict.cash_bank_account.get_query = function (doc) {
 cur_frm.fields_dict["items"].grid.get_field("item_code").get_query = function (doc, cdt, cdn) {
 	return {
 		query: "erpnext.controllers.queries.item_query",
-		filters: { is_purchase_item: 1 },
+		filters: { is_purchase_item: 1},
+		
 	};
 };
 
@@ -611,29 +612,29 @@ frappe.ui.form.on("Purchase Invoice", {
 	},
 
 	add_custom_buttons: function (frm) {
-		if (frm.doc.docstatus == 1 && frm.doc.per_received < 100) {
-			frm.add_custom_button(
-				__("Purchase Receipt"),
-				() => {
-					frm.events.make_purchase_receipt(frm);
-				},
-				__("Create")
-			);
-		}
+	// 	if (frm.doc.docstatus == 1 && frm.doc.per_received < 100) {
+	// 		frm.add_custom_button(
+	// 			__("Purchase Receipt"),
+	// 			() => {
+	// 				frm.events.make_purchase_receipt(frm);
+	// 			},
+	// 			__("Create")
+	// 		);
+	// 	}
 
-		if (frm.doc.docstatus == 1 && frm.doc.per_received > 0) {
-			frm.add_custom_button(
-				__("Purchase Receipt"),
-				() => {
-					frappe.route_options = {
-						purchase_invoice: frm.doc.name,
-					};
+	// 	if (frm.doc.docstatus == 1 && frm.doc.per_received > 0) {
+	// 		frm.add_custom_button(
+	// 			__("Purchase Receipt"),
+	// 			() => {
+	// 				frappe.route_options = {
+	// 					purchase_invoice: frm.doc.name,
+	// 				};
 
-					frappe.set_route("List", "Purchase Receipt", "List");
-				},
-				__("View")
-			);
-		}
+	// 				frappe.set_route("List", "Purchase Receipt", "List");
+	// 			},
+	// 			__("View")
+	// 		);
+	// 	}
 
 		if (frm.doc.docstatus === 1 && frm.doc.update_stock) {
 			frm.add_custom_button(

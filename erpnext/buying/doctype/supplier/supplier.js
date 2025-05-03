@@ -81,62 +81,62 @@ frappe.ui.form.on("Supplier", {
 			frappe.contacts.render_address_and_contact(frm);
 
 			// custom buttons
-			frm.add_custom_button(
-				__("Accounting Ledger"),
-				function () {
-					frappe.set_route("query-report", "General Ledger", {
-						party_type: "Supplier",
-						party: frm.doc.name,
-						party_name: frm.doc.supplier_name,
-					});
-				},
-				__("View")
-			);
+			// frm.add_custom_button(
+			// 	__("Accounting Ledger"),
+			// 	function () {
+			// 		frappe.set_route("query-report", "General Ledger", {
+			// 			party_type: "Supplier",
+			// 			party: frm.doc.name,
+			// 			party_name: frm.doc.supplier_name,
+			// 		});
+			// 	},
+			// 	__("View")
+			// );
 
-			frm.add_custom_button(
-				__("Accounts Payable"),
-				function () {
-					frappe.set_route("query-report", "Accounts Payable", {
-						party_type: "Supplier",
-						party: frm.doc.name,
-					});
-				},
-				__("View")
-			);
+			// frm.add_custom_button(
+			// 	__("Accounts Payable"),
+			// 	function () {
+			// 		frappe.set_route("query-report", "Accounts Payable", {
+			// 			party_type: "Supplier",
+			// 			party: frm.doc.name,
+			// 		});
+			// 	},
+			// 	__("View")
+			// );
 
-			frm.add_custom_button(
-				__("Bank Account"),
-				function () {
-					erpnext.utils.make_bank_account(frm.doc.doctype, frm.doc.name);
-				},
-				__("Create")
-			);
+			// frm.add_custom_button(
+			// 	__("Bank Account"),
+			// 	function () {
+			// 		erpnext.utils.make_bank_account(frm.doc.doctype, frm.doc.name);
+			// 	},
+			// 	__("Create")
+			// );
 
-			frm.add_custom_button(
-				__("Pricing Rule"),
-				function () {
-					erpnext.utils.make_pricing_rule(frm.doc.doctype, frm.doc.name);
-				},
-				__("Create")
-			);
+			// frm.add_custom_button(
+			// 	__("Pricing Rule"),
+			// 	function () {
+			// 		erpnext.utils.make_pricing_rule(frm.doc.doctype, frm.doc.name);
+			// 	},
+			// 	__("Create")
+			// );
 
-			frm.add_custom_button(
-				__("Get Supplier Group Details"),
-				function () {
-					frm.trigger("get_supplier_group_details");
-				},
-				__("Actions")
-			);
+			// frm.add_custom_button(
+			// 	__("Get Supplier Group Details"),
+			// 	function () {
+			// 		frm.trigger("get_supplier_group_details");
+			// 	},
+			// 	__("Actions")
+			// );
 
-			if (cint(frappe.defaults.get_default("enable_common_party_accounting"))) {
-				frm.add_custom_button(
-					__("Link with Customer"),
-					function () {
-						frm.trigger("show_party_link_dialog");
-					},
-					__("Actions")
-				);
-			}
+			// if (cint(frappe.defaults.get_default("enable_common_party_accounting"))) {
+			// 	frm.add_custom_button(
+			// 		__("Link with Customer"),
+			// 		function () {
+			// 			frm.trigger("show_party_link_dialog");
+			// 		},
+			// 		__("Actions")
+			// 	);
+			// }
 
 			// indicators
 			erpnext.utils.set_party_dashboard_indicators(frm);

@@ -159,6 +159,7 @@
    "default": "0",
    "fieldname": "is_a_subscription",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Is a Subscription"
   },
   {
@@ -322,6 +323,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "default": "Dear Customer,\n\nPlease complete your payment by clicking on the link below:\n\n{{ payment_link }}\n\nIf you have any questions, feel free to contact us.\n\nThank you for your business!\n\nBest regards,\u00a0\n{{ company_name }}",
    "depends_on": "eval: doc.payment_channel != \"Phone\"",
    "fieldname": "message",
    "fieldtype": "Text",
@@ -435,7 +437,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-23 12:23:40.117336",
+ "modified": "2024-12-19 19:36:14.337701",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Request",

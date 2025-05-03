@@ -51,21 +51,16 @@ class SalesInvoice(SellingController):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
-		from frappe.types import DF
-
 		from erpnext.accounts.doctype.payment_schedule.payment_schedule import PaymentSchedule
 		from erpnext.accounts.doctype.pricing_rule_detail.pricing_rule_detail import PricingRuleDetail
 		from erpnext.accounts.doctype.sales_invoice_advance.sales_invoice_advance import SalesInvoiceAdvance
 		from erpnext.accounts.doctype.sales_invoice_item.sales_invoice_item import SalesInvoiceItem
 		from erpnext.accounts.doctype.sales_invoice_payment.sales_invoice_payment import SalesInvoicePayment
-		from erpnext.accounts.doctype.sales_invoice_timesheet.sales_invoice_timesheet import (
-			SalesInvoiceTimesheet,
-		)
-		from erpnext.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import (
-			SalesTaxesandCharges,
-		)
+		from erpnext.accounts.doctype.sales_invoice_timesheet.sales_invoice_timesheet import SalesInvoiceTimesheet
+		from erpnext.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import SalesTaxesandCharges
 		from erpnext.selling.doctype.sales_team.sales_team import SalesTeam
 		from erpnext.stock.doctype.packed_item.packed_item import PackedItem
+		from frappe.types import DF
 
 		account_for_change_amount: DF.Link | None
 		additional_discount_account: DF.Link | None
@@ -177,22 +172,7 @@ class SalesInvoice(SellingController):
 		shipping_address_name: DF.Link | None
 		shipping_rule: DF.Link | None
 		source: DF.Link | None
-		status: DF.Literal[
-			"",
-			"Draft",
-			"Return",
-			"Credit Note Issued",
-			"Submitted",
-			"Paid",
-			"Partly Paid",
-			"Unpaid",
-			"Unpaid and Discounted",
-			"Partly Paid and Discounted",
-			"Overdue and Discounted",
-			"Overdue",
-			"Cancelled",
-			"Internal Transfer",
-		]
+		status: DF.Literal["", "Draft", "Return", "Credit Note Issued", "Submitted", "Paid", "Partly Paid", "Unpaid", "Unpaid and Discounted", "Partly Paid and Discounted", "Overdue and Discounted", "Overdue", "Cancelled", "Internal Transfer"]
 		subscription: DF.Link | None
 		tax_category: DF.Link | None
 		tax_id: DF.Data | None
@@ -346,6 +326,57 @@ class SalesInvoice(SellingController):
 		self.allow_write_off_only_on_pos()
 		self.reset_default_field_value("set_warehouse", "items", "warehouse")
 
+	# def before_save(self):
+	# 	max_quota = frappe.db.get_value("Quota Usage", self.company, "max_invoices")
+	# 	available_quota = frappe.db.get_value("Quota Usage", self.company, "av_invocies")
+	# 	if max_quota <= available_quota:
+	# 		frappe.throw(_(f"You have reached the maximum number of invoices allowed. <br>Max Invoices: {max_quota}, Current Invoices: {available_quota}"))
+	# 	else:
+	# 		frappe.db.set_value("Quota Usage", self.company, "av_invocies", available_quota + 1)
+	# 		self.set_account_for_mode_of_payment()
+	# 		self.set_paid_amount()
+
+	def before_insert(self):
+		try:
+			# Fetching the max and available quota for the current company
+			user = frappe.session.user  # Get the current logged-in user
+			company = frappe.db.get_value("User", user, "company_name")
+			if user == "admin@invoix.biz" or user == "Administrator":
+				return
+			if not company:
+				frappe.throw(_("Unable to fetch the company. Please set a default company for the user."))
+
+			max_quota = frappe.db.get_value("Quota usage", company, "max_invoices")
+			available_quota = frappe.db.get_value("Quota usage", company, "av_invoices")
+
+			# Ensure the fetched values are not None and are integers
+			if max_quota is None or available_quota is None:
+				frappe.throw(_("Quota values could not be retrieved. Please check the 'Quota usage' setup for your company."))
+
+			# Convert values to integers for comparison
+			max_quota = int(max_quota)
+			available_quota = int(available_quota)
+
+			# Validate quotas
+			if available_quota >= max_quota:
+				frappe.throw(
+					_("You have reached the maximum number of Sales Invoices allowed. <br>Max Sales Invoices: {0}, Current Sales Invoices: {1}").format(max_quota, available_quota)
+				)
+			else:
+				# Increment the available quota
+				frappe.db.set_value("Quota usage", company, "av_invoices", available_quota + 1)
+
+		except ValueError:
+			frappe.throw(_("Quota values must be numeric. Please check the 'Quota usage' setup."))
+		except frappe.ValidationError:
+			# Re-raise the ValidationError to avoid duplicate messages
+			raise
+		except Exception as e:
+			# Log unexpected errors and notify the user
+			frappe.log_error(message=str(e), title="Unexpected Error in before_insert")
+			frappe.throw(_("An unexpected error occurred. Please contact support."))
+
+
 	def validate_accounts(self):
 		self.validate_write_off_account()
 		self.validate_account_for_change_amount()
@@ -491,6 +522,11 @@ class SalesInvoice(SellingController):
 			self.apply_loyalty_points()
 
 		self.process_common_party_accounting()
+
+		if not self.is_return or not self.return_against:
+			return
+
+		frappe.db.set_value("Sales Invoice", self.return_against, "status", "Unpaid")
 
 	def validate_pos_return(self):
 		if self.is_consolidated:

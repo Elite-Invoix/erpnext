@@ -10,16 +10,16 @@ erpnext.sales_common.setup_selling_controller();
 
 frappe.ui.form.on("Quotation", {
 	setup: function (frm) {
-		(frm.custom_make_buttons = {
-			"Sales Order": "Sales Order",
-		}),
-			frm.set_query("quotation_to", function () {
-				return {
-					filters: {
-						name: ["in", ["Customer", "Lead", "Prospect"]],
-					},
-				};
-			});
+		// (frm.custom_make_buttons = {
+		// 	"Sales Order": "Sales Order",
+		// }),
+		// 	frm.set_query("quotation_to", function () {
+		// 		return {
+		// 			filters: {
+		// 				name: ["in", ["Customer", "Lead", "Prospect"]],
+		// 			},
+		// 		};
+		// 	});
 
 		frm.set_df_property("packed_items", "cannot_add_rows", true);
 		frm.set_df_property("packed_items", "cannot_delete_rows", true);
@@ -119,13 +119,13 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 		}
 
 		if (doc.docstatus == 1 && !["Lost", "Ordered"].includes(doc.status)) {
-			if (
-				frappe.boot.sysdefaults.allow_sales_order_creation_for_expired_quotation ||
-				!doc.valid_till ||
-				frappe.datetime.get_diff(doc.valid_till, frappe.datetime.get_today()) >= 0
-			) {
-				this.frm.add_custom_button(__("Sales Order"), () => this.make_sales_order(), __("Create"));
-			}
+			// if (
+			// 	frappe.boot.sysdefaults.allow_sales_order_creation_for_expired_quotation ||
+			// 	!doc.valid_till ||
+			// 	frappe.datetime.get_diff(doc.valid_till, frappe.datetime.get_today()) >= 0
+			// ) {
+			// 	this.frm.add_custom_button(__("Sales Order"), () => this.make_sales_order(), __("Create"));
+			// }
 
 			if (doc.status !== "Ordered") {
 				this.frm.add_custom_button(__("Set as Lost"), () => {
@@ -136,40 +136,40 @@ erpnext.selling.QuotationController = class QuotationController extends erpnext.
 			cur_frm.page.set_inner_btn_group_as_primary(__("Create"));
 		}
 
-		if (this.frm.doc.docstatus === 0) {
-			this.frm.add_custom_button(
-				__("Opportunity"),
-				function () {
-					erpnext.utils.map_current_doc({
-						method: "erpnext.crm.doctype.opportunity.opportunity.make_quotation",
-						source_doctype: "Opportunity",
-						target: me.frm,
-						setters: [
-							{
-								label: "Party",
-								fieldname: "party_name",
-								fieldtype: "Link",
-								options: me.frm.doc.quotation_to,
-								default: me.frm.doc.party_name || undefined,
-							},
-							{
-								label: "Opportunity Type",
-								fieldname: "opportunity_type",
-								fieldtype: "Link",
-								options: "Opportunity Type",
-								default: me.frm.doc.order_type || undefined,
-							},
-						],
-						get_query_filters: {
-							status: ["not in", ["Lost", "Closed"]],
-							company: me.frm.doc.company,
-						},
-					});
-				},
-				__("Get Items From"),
-				"btn-default"
-			);
-		}
+		// if (this.frm.doc.docstatus === 0) {
+		// 	this.frm.add_custom_button(
+		// 		__("Opportunity"),
+		// 		function () {
+		// 			erpnext.utils.map_current_doc({
+		// 				method: "erpnext.crm.doctype.opportunity.opportunity.make_quotation",
+		// 				source_doctype: "Opportunity",
+		// 				target: me.frm,
+		// 				setters: [
+		// 					{
+		// 						label: "Party",
+		// 						fieldname: "party_name",
+		// 						fieldtype: "Link",
+		// 						options: me.frm.doc.quotation_to,
+		// 						default: me.frm.doc.party_name || undefined,
+		// 					},
+		// 					{
+		// 						label: "Opportunity Type",
+		// 						fieldname: "opportunity_type",
+		// 						fieldtype: "Link",
+		// 						options: "Opportunity Type",
+		// 						default: me.frm.doc.order_type || undefined,
+		// 					},
+		// 				],
+		// 				get_query_filters: {
+		// 					status: ["not in", ["Lost", "Closed"]],
+		// 					company: me.frm.doc.company,
+		// 				},
+		// 			});
+		// 		},
+		// 		__("Get Items From"),
+		// 		"btn-default"
+		// 	);
+		// }
 
 		this.toggle_reqd_lead_customer();
 	}

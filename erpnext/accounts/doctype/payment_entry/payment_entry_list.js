@@ -9,5 +9,14 @@ frappe.listview_settings["Payment Entry"] = {
 				};
 			};
 		}
+
+		if(listview.view==="Report"){
+			listview.page.set_title("Report: Receipt")
+			$('[data-label="Add Receive Payment"]').hide()
+		}
+		else{
+			$('[data-label="Add Receive Payment"]').show()
+		}
+
 	},
 };

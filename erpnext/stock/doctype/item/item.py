@@ -226,6 +226,57 @@ class Item(Document):
 		"""Clean HTML description if set"""
 		if cint(frappe.db.get_single_value("Stock Settings", "clean_description_html")):
 			self.description = clean_html(self.description)
+		
+	#def before_save(self):
+	#	max_quota = frappe.db.get_value("Quota Usage", frappe.defaults.get_user_default("Company"), "max_products")
+	#	available_quota = frappe.db.get_value("Quota Usage", frappe.defaults.get_user_default("Company"), "av_products")
+	#	if max_quota <= available_quota:
+	#		frappe.throw(_(f"You have reached the maximum number of products allowed. <br>Max products: {max_quota}, Current Invoices: {available_quota}"))
+	#	else:
+	#		frappe.db.set_value("Quota Usage", frappe.defaults.get_user_default("Company"), "av_products", available_quota + 1)
+	def before_insert(self):
+		try:
+			# Fetching the max and available quota for the current company
+			user = frappe.session.user  # Get the current logged-in user
+			company = frappe.db.get_value("User", user, "company_name")
+
+			if user == "admin@invoix.biz" or user == "Administrator":
+				return
+
+			if not company:
+				frappe.throw(_("Unable to fetch the company. Please set a default company for the user."))
+
+			max_quota = frappe.db.get_value("Quota usage", company, "max_products")
+			available_quota = frappe.db.get_value("Quota usage", company, "av_products")
+
+			# Ensure the fetched values are not None and are integers
+			if max_quota is None or available_quota is None:
+				frappe.throw(_("Quota values could not be retrieved. Please check the 'Quota usage' setup for your company."))
+
+			# Convert values to integers for comparison
+			max_quota = int(max_quota)
+			available_quota = int(available_quota)
+
+			# Validate quotas
+			if available_quota >= max_quota:
+				frappe.throw(
+					_("You have reached the maximum number of products allowed. <br>Max products: {0}, Current products: {1}").format(max_quota, available_quota)
+				)
+			else:
+				# Increment the available quota
+				frappe.db.set_value("Quota usage", company, "av_products", available_quota + 1)
+
+		except ValueError:
+			frappe.throw(_("Quota values must be numeric. Please check the 'Quota usage' setup."))
+		except frappe.ValidationError:
+			# Re-raise the ValidationError to avoid duplicate messages
+			raise
+		except Exception as e:
+			# Log unexpected errors and notify the user
+			frappe.log_error(message=str(e), title="Unexpected Error in before_insert")
+			frappe.throw(_("An unexpected error occurred. Please contact support."))
+
+
 
 	def validate_customer_provided_part(self):
 		if self.is_customer_provided_item:

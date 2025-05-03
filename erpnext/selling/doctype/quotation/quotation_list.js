@@ -19,6 +19,7 @@ frappe.listview_settings["Quotation"] = {
 		listview.page.add_action_item(__("Sales Invoice"), () => {
 			erpnext.bulk_transaction_processing.create(listview, "Quotation", "Sales Invoice");
 		});
+		listview.filter_area.standard_filters_wrapper.find('[data-fieldname="title"]').remove();
 	},
 
 	get_indicator: function (doc) {

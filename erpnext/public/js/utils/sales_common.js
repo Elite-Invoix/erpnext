@@ -75,7 +75,7 @@ erpnext.sales_common = {
 					this.frm.set_query("item_code", "items", function () {
 						return {
 							query: "erpnext.controllers.queries.item_query",
-							filters: { is_sales_item: 1, customer: me.frm.doc.customer, has_variants: 0 },
+							filters: { is_sales_item: 1, customer: me.frm.doc.customer, has_variants: 0,"apply_item_group_filter": 1,"is_raw_material":0  },
 						};
 					});
 				}

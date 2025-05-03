@@ -20,7 +20,38 @@ frappe.ui.form.on("Journal Entry", {
 			"Unreconcile Payment Entries",
 			"Bank Transaction",
 		];
+		frm.set_query("custom_purchase_invoice", function () {
+			return {
+				filters: {
+					docstatus: 1,
+					company: frm.doc.company,
+					supplier: ["in",frm.doc.accounts.map((x) => x.party).filter((x) => x)],
+					status: "Unpaid",
+				},
+			};
+		}
+	)
+
 	},
+
+	async custom_purchase_invoice(frm) {
+		// Get the list of sales invoices from the child table
+		const purchase_invoices = frm.doc.custom_purchase_invoice.map(d => d.purchase_invoice);
+
+		// Call the backend method to get total outstanding amount and taxes
+		const totals = await frappe.xcall("erpnext.accounts.doctype.journal_entry.journal_entry.journal_entry_total_amount", {
+			purchase_invoices: purchase_invoices,
+		});
+
+		console.log("totals", totals);
+
+		// Set the paid amount to the total outstanding amount
+		frm.set_value("custom_total", totals.outstanding_amount || 0);
+
+	
+	
+	},
+
 
 	refresh: function (frm) {
 		erpnext.toggle_naming_series();
@@ -55,9 +86,9 @@ frappe.ui.form.on("Journal Entry", {
 		}
 
 		if (frm.doc.__islocal) {
-			frm.add_custom_button(__("Quick Entry"), function () {
-				return erpnext.journal_entry.quick_entry(frm);
-			});
+			// frm.add_custom_button(__("Quick Entry"), function () {
+			// 	return erpnext.journal_entry.quick_entry(frm);
+			// });
 		}
 
 		// hide /unhide fields based on currency

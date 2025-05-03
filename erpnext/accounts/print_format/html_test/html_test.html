@@ -1,0 +1,159 @@
+{% set company = frappe.get_doc("Company", doc.company) %}
+{% set customer = frappe.get_doc("Customer", doc.customer) %}
+{% set payment_entries = frappe.get_all('Payment Entry Reference', filters={'reference_name': doc.name}, fields=['parent']) %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - ACC-SINV-2025-00055</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .header h2 {
+            margin: 0;
+        }
+        .header p {
+            margin: 5px 0;
+        }
+        .header img {
+            max-width: 100px;
+        }
+        .horizontal-line {
+            border-top: 2px solid black;
+            margin: 5px 0;
+        }
+        .invoice-details, .customer-details, .bank-calculations {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        .invoice-table th {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+            background-color: #f2f2f2;
+            color: black;
+        }
+        .invoice-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .footer {
+            font-size: 12px;
+            text-align: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">`
+        <div>
+            <!-- company details -->
+            {% if company %}
+            <p>{{ company.custom_street_no or "" }}</p>
+            <p>{{ company.custom_address_line_1 or "" }}</p>
+            <p>{{ company.custom_address_line_2 or "" }}</p>
+            <p>{{ company.custom_postal_code if company.custom_postal_code}} <span class="uppercase">{{doc.custom_company_city}}</span></p>
+            <p class="uppercase">{{ doc.custom_company_state if doc.custom_company_state}}</p>      
+            <p>{{ company.custom_email_address or "" }}</p>
+            <p>{{ company.custom_contact_number or "" }}</p>   
+            {% endif %}
+        </div>
+        <img src="logo.png" alt="Company Logo">
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="horizontal-line"></div>
+    <div class="invoice-details">
+        {% if company %}
+        <div>
+            <p><strong>Registration No.:</strong> {{ company.custom_business_registration_no }}</p>
+            <p><strong>Income Tax No. (TIN):</strong> {{ company.custom_business_tin_no }}</p>
+            <p><strong>SST No.:</strong> {{ company.custom_sst_reg_no }}</p>
+            <p><strong>MSIC Code:</strong> {{ company.custom_msic_code }}</p>
+        </div>
+        {% endif %}
+        <div>
+            <p><strong>Invoice No.:</strong> ACC-SINV-2025-00055</p>
+            <p><strong>Date:</strong> 25-03-2025</p>
+            <p><strong>Payment Mode:</strong> Cash</p>
+            <p><strong>Currency:</strong> MYR</p>
+        </div>
+    </div>
+    <div class="customer-details">
+        {% if customer %}
+        <div>
+            <p><strong>Customer:</strong> {{customer.customer_name or ""}}</p>
+            <p><strong>Registration No.:</strong> {{customer.custom_business_registration_number or ""}}</p>
+            <p><strong>Income Tax No. (TIN):</strong> {{customer.custom_tin_number or ""}}</p>
+            <p><strong>SST No.:</strong> {{customer.custom_sst_registration_number or ""}}</p>
+            <p><strong>MSIC Code:</strong> {{customer.custom_msic_code or ""}}</p>
+        </div>
+        {% endif %}
+    </div>
+    <table class="invoice-table">
+        <tr>
+            <th>No</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th>Total Amount</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Basic Plan</td>
+            <td>1</td>
+            <td>RM 720.00</td>
+            <td>RM 720.00</td>
+        </tr>
+    </table>
+    <div class="bank-calculations">
+        {% if payment_entries %}
+            {% set payment_entry = frappe.get_doc('Payment Entry', payment_entries[0].parent) %}
+            {% if payment_entry.party_bank_account %}
+                {% set party_bank_account = frappe.get_doc('Bank Account', payment_entry.party_bank_account) %}
+                <p>Bank Name: {{ party_bank_account.bank or "N/A" }}</p>
+                <p>Account Number: {{ party_bank_account.bank_account_no or "N/A" }}</p>
+                <p>SWIFT Code: {{ party_bank_account.custom_swift_code or "N/A" }}</p>
+            {% endif %}
+        {% endif %}
+        <div>
+            <p><strong>Total excluding tax:</strong> RM 720.00</p>
+            <p><strong>Tax amount:</strong> RM 0.00</p>
+            <p><strong>Total including tax:</strong> RM {{doc.total}}</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Thank you for your business! We appreciate your trust in Invoix.</p>
+        <p>If you have any questions, feel free to contact us at jessyramaloo@yahoo.co.uk</p>
+        <p>This invoice is computer-generated and does not require a signature.</p>
+        <p><a href="https://preprod.myinvois.hasil.gov.my/TQ6STYV7M5A43P7J0ERM36QJ10/share/HCSJA648H7TNNQDP0ERM36QJ109aDLWI1742888133">View Invoice Online</a></p>
+    </div>
+</body>
+</html>

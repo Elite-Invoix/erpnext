@@ -1,0 +1,42 @@
+{
+ "based_on": "creation",
+ "chart_name": "Income vs Expense",
+ "chart_type": "Average",
+ "creation": "2024-12-23 14:16:39.298729",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "GL Entry",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[]",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "last_synced_on": "2024-12-23 14:17:10.677466",
+ "modified": "2024-12-23 14:18:51.225429",
+ "modified_by": "admin@invoix.biz",
+ "module": "Accounts",
+ "name": "Income vs Expense",
+ "number_of_groups": 0,
+ "owner": "admin@invoix.biz",
+ "parent_document_type": "",
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Admin Accounts"
+  },
+  {
+   "role": "Accounts User"
+  }
+ ],
+ "source": "",
+ "time_interval": "Yearly",
+ "timeseries": 1,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "value_based_on": "credit",
+ "y_axis": []
+}

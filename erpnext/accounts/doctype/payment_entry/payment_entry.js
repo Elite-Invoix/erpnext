@@ -8,7 +8,7 @@ erpnext.accounts.taxes.setup_tax_validations("Payment Entry");
 erpnext.accounts.taxes.setup_tax_filters("Advance Taxes and Charges");
 
 frappe.ui.form.on("Payment Entry", {
-	onload: function (frm) {
+	onload: async function (frm) {
 		frm.ignore_doctypes_on_cancel_all = [
 			"Sales Invoice",
 			"Purchase Invoice",
@@ -26,10 +26,41 @@ frappe.ui.form.on("Payment Entry", {
 		}
 
 		erpnext.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
+		if(frm.doc.company){
+			const resp=await frappe.db.get_value("Company",cur_frm.doc.company,"abbr")
+			frm.set_value("naming_series",`OR-${resp.message.abbr}-.YYYY.-.MM.-.####`);
+		}
 	},
 
+	// async custom_sales_invoice(frm) {
+	// 	// Get the list of sales invoices from the child table
+	// 	const sales_invoices = frm.doc.custom_sales_invoice.map(d => d.sales_invoice);
+
+	// 	// Call the backend method to get total outstanding amount and taxes
+	// 	const totals = await frappe.xcall("erpnext.accounts.doctype.payment_entry.payment_entry.payment_entry_total_amount", {
+	// 		sales_invoices: sales_invoices,
+	// 	});
+
+	// 	console.log("totals", totals);
+
+	// 	// Set the paid amount to the total outstanding amount
+	// 	frm.set_value("paid_amount", totals.outstanding_amount || 0);
+
+	// 	// Set the total taxes field (assuming you have a field for taxes)
+	// 	frm.set_value("total_taxes_and_charges", totals.total_taxes_and_charges || 0);
+	// },
+
+
 	setup: function (frm) {
+		// if (frm.doc.references) {
+		// 	const sales_invoices = frm.doc.references
+		// 		.filter(row => row.reference_doctype === "Sales Invoice")
+		// 		.map(d => ({ "sales_invoice": d.reference_name }));
+		// 	frm.set_value("custom_sales_invoice", sales_invoices);
+		// }
+	
 		frm.set_query("paid_from", function () {
+
 			frm.events.validate_company(frm);
 
 			var account_types = ["Pay", "Internal Transfer"].includes(frm.doc.payment_type)
@@ -57,6 +88,37 @@ frappe.ui.form.on("Payment Entry", {
 				},
 			};
 		});
+
+		// frm.set_query("custom_sales_invoice", function () {
+		// 	if (!frm.doc.party) {
+		// 		return frappe.throw(__("Please select a Buyer first."));
+		// 	}
+		// 	return {
+		// 		filters: {
+		// 			customer: frm.doc.party,
+		// 			docstatus: 1,
+		// 			company: frm.doc.company,
+		// 			status: "Unpaid",
+
+		// 		},
+		// 	};
+		// });
+
+		frm.set_query("custom_sales_invoice_single", function () {
+			if (!frm.doc.party) {
+				return frappe.throw(__("Please select a Buyer first."));
+			}
+			return {
+				filters: {
+					customer: frm.doc.party,
+					// docstatus: 1,
+					company: frm.doc.company,
+					status: ["in",["Unpaid","Partly Paid","Overdue","Draft"]],
+
+				},
+			};
+		});
+
 
 		frm.set_query("party_bank_account", function () {
 			return {
@@ -269,8 +331,8 @@ frappe.ui.form.on("Payment Entry", {
 		frm.toggle_display(
 			"target_exchange_rate",
 			frm.doc.received_amount &&
-				frm.doc.paid_to_account_currency != company_currency &&
-				frm.doc.paid_from_account_currency != frm.doc.paid_to_account_currency
+			frm.doc.paid_to_account_currency != company_currency &&
+			frm.doc.paid_from_account_currency != frm.doc.paid_to_account_currency
 		);
 
 		frm.toggle_display("base_paid_amount", frm.doc.paid_from_account_currency != company_currency);
@@ -290,24 +352,24 @@ frappe.ui.form.on("Payment Entry", {
 		frm.toggle_display(
 			"base_received_amount",
 			frm.doc.paid_to_account_currency != company_currency &&
-				frm.doc.paid_from_account_currency != frm.doc.paid_to_account_currency &&
-				frm.doc.base_paid_amount != frm.doc.base_received_amount
+			frm.doc.paid_from_account_currency != frm.doc.paid_to_account_currency &&
+			frm.doc.base_paid_amount != frm.doc.base_received_amount
 		);
 
 		frm.toggle_display(
 			"received_amount",
 			frm.doc.payment_type == "Internal Transfer" ||
-				frm.doc.paid_from_account_currency != frm.doc.paid_to_account_currency
+			frm.doc.paid_from_account_currency != frm.doc.paid_to_account_currency
 		);
 
 		frm.toggle_display(
 			["base_total_allocated_amount"],
 			frm.doc.paid_amount &&
-				frm.doc.received_amount &&
-				frm.doc.base_total_allocated_amount &&
-				((frm.doc.payment_type == "Receive" &&
-					frm.doc.paid_from_account_currency != company_currency) ||
-					(frm.doc.payment_type == "Pay" && frm.doc.paid_to_account_currency != company_currency))
+			frm.doc.received_amount &&
+			frm.doc.base_total_allocated_amount &&
+			((frm.doc.payment_type == "Receive" &&
+				frm.doc.paid_from_account_currency != company_currency) ||
+				(frm.doc.payment_type == "Pay" && frm.doc.paid_to_account_currency != company_currency))
 		);
 
 		var party_amount = frm.doc.payment_type == "Receive" ? frm.doc.paid_amount : frm.doc.received_amount;
@@ -382,25 +444,25 @@ frappe.ui.form.on("Payment Entry", {
 		frm.refresh_fields();
 	},
 
-	show_general_ledger: function (frm) {
-		if (frm.doc.docstatus > 0) {
-			frm.add_custom_button(
-				__("Ledger"),
-				function () {
-					frappe.route_options = {
-						voucher_no: frm.doc.name,
-						from_date: frm.doc.posting_date,
-						to_date: moment(frm.doc.modified).format("YYYY-MM-DD"),
-						company: frm.doc.company,
-						group_by: "",
-						show_cancelled_entries: frm.doc.docstatus === 2,
-					};
-					frappe.set_route("query-report", "General Ledger");
-				},
-				"fa fa-table"
-			);
-		}
-	},
+	// show_general_ledger: function (frm) {
+	// 	if (frm.doc.docstatus > 0) {
+	// 		frm.add_custom_button(
+	// 			__("Ledger"),
+	// 			function () {
+	// 				frappe.route_options = {
+	// 					voucher_no: frm.doc.name,
+	// 					from_date: frm.doc.posting_date,
+	// 					to_date: moment(frm.doc.modified).format("YYYY-MM-DD"),
+	// 					company: frm.doc.company,
+	// 					group_by: "",
+	// 					show_cancelled_entries: frm.doc.docstatus === 2,
+	// 				};
+	// 				frappe.set_route("query-report", "General Ledger");
+	// 			},
+	// 			"fa fa-table"
+	// 		);
+	// 	}
+	// },
 
 	payment_type: function (frm) {
 		if (frm.doc.payment_type == "Internal Transfer") {
@@ -653,7 +715,7 @@ frappe.ui.form.on("Payment Entry", {
 
 									if (
 										frm.doc.paid_from_account_currency ==
-											frm.doc.paid_to_account_currency &&
+										frm.doc.paid_to_account_currency &&
 										frm.doc.paid_amount != frm.doc.received_amount
 									) {
 										if (
@@ -690,8 +752,8 @@ frappe.ui.form.on("Payment Entry", {
 				frappe.call({
 					method: "erpnext.setup.utils.get_exchange_rate",
 					args: {
-						from_currency: frm.doc.paid_from_account_currency,
-						to_currency: company_currency,
+						from_currency: "MYR",
+						to_currency: "MYR",
 						transaction_date: frm.doc.posting_date,
 					},
 					callback: function (r, rt) {
@@ -726,8 +788,8 @@ frappe.ui.form.on("Payment Entry", {
 			method: "erpnext.setup.utils.get_exchange_rate",
 			args: {
 				transaction_date: frm.doc.posting_date,
-				from_currency: from_currency,
-				to_currency: to_currency,
+				from_currency: "MYR",
+				to_currency:"MYR",
 			},
 			callback: function (r, rt) {
 				const ex_rate = flt(r.message, frm.get_field(exchange_rate_field).get_precision());
@@ -1121,7 +1183,7 @@ frappe.ui.form.on("Payment Entry", {
 				frm.doc.payment_type == "Receive" &&
 				frm.doc.base_total_allocated_amount < frm.doc.base_received_amount + total_deductions &&
 				frm.doc.total_allocated_amount <
-					frm.doc.paid_amount + total_deductions / frm.doc.source_exchange_rate
+				frm.doc.paid_amount + total_deductions / frm.doc.source_exchange_rate
 			) {
 				unallocated_amount =
 					(frm.doc.base_received_amount +
@@ -1133,7 +1195,7 @@ frappe.ui.form.on("Payment Entry", {
 				frm.doc.payment_type == "Pay" &&
 				frm.doc.base_total_allocated_amount < frm.doc.base_paid_amount - total_deductions &&
 				frm.doc.total_allocated_amount <
-					frm.doc.received_amount + total_deductions / frm.doc.target_exchange_rate
+				frm.doc.received_amount + total_deductions / frm.doc.target_exchange_rate
 			) {
 				unallocated_amount =
 					(frm.doc.base_paid_amount +

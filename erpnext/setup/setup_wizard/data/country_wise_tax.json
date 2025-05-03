@@ -4084,21 +4084,6 @@
 		}
 	},
 
-	"Malaysia": {
-		"Malaysia GST 6%": {
-			"account_name": "GST",
-			"tax_rate": 6.00,
-			"default": 1
-		},
-		"Malaysia GST 5%": {
-			"account_name": "GST",
-			"tax_rate": 5.00
-		},
-		"Malaysia GST 10%": {
-			"account_name": "GST",
-			"tax_rate": 10.00
-		}
-	},
 
 	"Mali": {
 		"Mali Tax": {

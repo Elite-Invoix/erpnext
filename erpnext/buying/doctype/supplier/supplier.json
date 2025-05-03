@@ -33,7 +33,6 @@
   "column_break_30",
   "website",
   "language",
-  "dashboard_tab",
   "tax_tab",
   "tax_id",
   "column_break_27",
@@ -91,7 +90,7 @@
    "fieldname": "supplier_name",
    "fieldtype": "Data",
    "in_global_search": 1,
-   "label": "Supplier Name",
+   "label": "Vendor Name",
    "no_copy": 1,
    "oldfieldname": "supplier_name",
    "oldfieldtype": "Data",
@@ -393,12 +392,6 @@
    "options": "Address"
   },
   {
-   "fieldname": "dashboard_tab",
-   "fieldtype": "Tab Break",
-   "label": "Dashboard",
-   "show_dashboard": 1
-  },
-  {
    "fieldname": "settings_tab",
    "fieldtype": "Tab Break",
    "label": "Settings"
@@ -478,14 +471,8 @@
  "icon": "fa fa-user",
  "idx": 370,
  "image_field": "image",
- "links": [
-  {
-   "group": "Allowed Items",
-   "link_doctype": "Party Specific Item",
-   "link_fieldname": "party"
-  }
- ],
- "modified": "2024-05-08 18:02:57.342931",
+ "links": [],
+ "modified": "2025-05-03 18:21:14.470758",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Supplier",

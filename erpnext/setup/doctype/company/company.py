@@ -78,6 +78,8 @@ class Company(NestedSet):
 		exception_budget_approver_role: DF.Link | None
 		exchange_gain_loss_account: DF.Link | None
 		existing_company: DF.Link | None
+		expenses_included_in_asset_valuation: DF.Link | None
+		expenses_included_in_valuation: DF.Link | None
 		fax: DF.Data | None
 		is_group: DF.Check
 		lft: DF.Int
@@ -86,6 +88,7 @@ class Company(NestedSet):
 		parent_company: DF.Link | None
 		payment_terms: DF.Link | None
 		phone_no: DF.Data | None
+		plan_type: DF.Data | None
 		reconcile_on_advance_payment_date: DF.Check
 		registration_details: DF.Code | None
 		rgt: DF.Int
@@ -149,6 +152,67 @@ class Company(NestedSet):
 		self.check_parent_changed()
 		self.set_chart_of_accounts()
 		self.validate_parent_company()
+
+		
+	def merchant_quota_usage(self):
+		if self.company_name == 'Invoix':
+			return True
+		# Fetch the subscription plan
+		subscription_plan = frappe.get_doc('Subscription Module', self.custom_subcription_plan)
+
+		# Check if a Quota usage document already exists for the company
+		existing_quota_usage = frappe.get_all(
+			"Quota usage",
+			filters={"company": self.company_name},
+			fields=["name"]
+		)
+		old_user = 0
+		if existing_quota_usage:
+			# Delete the existing Quota usage document
+			for quota in existing_quota_usage:
+				quota_variable = frappe.get_doc("Quota usage",quota.name)
+				old_user = quota_variable.av_users
+				frappe.delete_doc("Quota usage", quota.name, ignore_permissions=True)
+
+		# Create a new Quota usage document
+		new_quota_usage_doc = frappe.get_doc({
+			"doctype": "Quota usage",
+			"company": self.company_name,
+			"max_users": subscription_plan.max_users,
+			"max_invoices": subscription_plan.max_invoices,
+			"max_products": subscription_plan.max_products,
+			"max_quotations": subscription_plan.max_quotations,
+			"av_users":old_user,
+			
+		})
+		new_quota_usage_doc.insert(ignore_permissions=True)
+		new_quota_usage_doc.submit()
+
+		return True
+
+
+
+
+
+	def after_insert(self):
+		# Fetch the subscription plan
+		# 
+		self.merchant_quota_usage()
+		# Create Quota usage document
+		# create_quota_usage = frappe.get_doc({
+		# 	"doctype": "Quota usage",
+		# 	"company": self.company_name,
+		# 	"max_users": subscription_plan.max_users,
+		# 	"max_invoices": subscription_plan.max_invoices,
+		# 	"max_products": subscription_plan.max_products,
+		# 	"max_quotations": subscription_plan.max_quotations,
+		# })
+		
+		# # Insert and submit the Quota usage document
+		# create_quota_usage.insert(ignore_permissions=True)
+		# create_quota_usage.submit()
+
+	
 
 	def validate_abbr(self):
 		if not self.abbr:
@@ -235,6 +299,12 @@ class Company(NestedSet):
 			)
 
 	def on_update(self):
+		if self.custom_change_plan:
+			self.merchant_quota_usage()
+			self.custom_change_plan = 0
+			self.save() 
+
+
 		NestedSet.on_update(self)
 		if not frappe.db.sql(
 			"""select name from tabAccount
@@ -245,6 +315,7 @@ class Company(NestedSet):
 				frappe.flags.country_change = True
 				self.create_default_accounts()
 				self.create_default_warehouses()
+				# sales_and_charges_template(self)
 
 		if not frappe.db.get_value("Cost Center", {"is_group": 0, "company": self.name}):
 			self.create_default_cost_center()
@@ -931,3 +1002,4 @@ def create_transaction_deletion_request(company):
 		),
 		frappe.bold(company),
 	)
+

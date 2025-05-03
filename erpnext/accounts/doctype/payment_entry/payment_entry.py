@@ -53,6 +53,84 @@ class InvalidPaymentEntry(ValidationError):
 
 
 class PaymentEntry(AccountsController):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from erpnext.accounts.doctype.advance_taxes_and_charges.advance_taxes_and_charges import AdvanceTaxesandCharges
+		from erpnext.accounts.doctype.payment_entry_deduction.payment_entry_deduction import PaymentEntryDeduction
+		from erpnext.accounts.doctype.payment_entry_reference.payment_entry_reference import PaymentEntryReference
+		from frappe.types import DF
+
+		amended_from: DF.Link | None
+		apply_tax_withholding_amount: DF.Check
+		auto_repeat: DF.Link | None
+		bank: DF.ReadOnly | None
+		bank_account: DF.Link | None
+		bank_account_no: DF.ReadOnly | None
+		base_in_words: DF.SmallText | None
+		base_paid_amount: DF.Currency
+		base_paid_amount_after_tax: DF.Currency
+		base_received_amount: DF.Currency
+		base_received_amount_after_tax: DF.Currency
+		base_total_allocated_amount: DF.Currency
+		base_total_taxes_and_charges: DF.Currency
+		book_advance_payments_in_separate_party_account: DF.Check
+		clearance_date: DF.Date | None
+		company: DF.Link
+		contact_email: DF.Data | None
+		contact_person: DF.Link | None
+		cost_center: DF.Link | None
+		custom_remarks: DF.Check
+		deductions: DF.Table[PaymentEntryDeduction]
+		difference_amount: DF.Currency
+		in_words: DF.SmallText | None
+		is_opening: DF.Literal["No", "Yes"]
+		letter_head: DF.Link | None
+		mode_of_payment: DF.Link | None
+		naming_series: DF.Literal["ACC-PAY-.YYYY.-"]
+		paid_amount: DF.Currency
+		paid_amount_after_tax: DF.Currency
+		paid_from: DF.Link
+		paid_from_account_balance: DF.Currency
+		paid_from_account_currency: DF.Link
+		paid_from_account_type: DF.Data | None
+		paid_to: DF.Link
+		paid_to_account_balance: DF.Currency
+		paid_to_account_currency: DF.Link
+		paid_to_account_type: DF.Data | None
+		party: DF.DynamicLink | None
+		party_balance: DF.Currency
+		party_bank_account: DF.Link | None
+		party_name: DF.Data | None
+		party_type: DF.Link | None
+		payment_order: DF.Link | None
+		payment_order_status: DF.Literal["Initiated", "Payment Ordered"]
+		payment_type: DF.Literal["Receive", "Internal Transfer"]
+		posting_date: DF.Date
+		print_heading: DF.Link | None
+		project: DF.Link | None
+		purchase_taxes_and_charges_template: DF.Link | None
+		received_amount: DF.Currency
+		received_amount_after_tax: DF.Currency
+		reconcile_on_advance_payment_date: DF.Check
+		reference_date: DF.Date | None
+		reference_no: DF.Data | None
+		references: DF.Table[PaymentEntryReference]
+		remarks: DF.SmallText | None
+		sales_taxes_and_charges_template: DF.Link | None
+		source_exchange_rate: DF.Float
+		status: DF.Literal["", "Draft", "Submitted", "Cancelled"]
+		target_exchange_rate: DF.Float
+		tax_withholding_category: DF.Link | None
+		taxes: DF.Table[AdvanceTaxesandCharges]
+		title: DF.Data | None
+		total_allocated_amount: DF.Currency
+		total_taxes_and_charges: DF.Currency
+		unallocated_amount: DF.Currency
+	# end: auto-generated types
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 		if not self.is_new():
@@ -113,6 +191,12 @@ class PaymentEntry(AccountsController):
 		self.make_advance_payment_ledger_entries()
 		self.update_advance_paid()  # advance_paid_status depends on the payment request amount
 		self.set_status()
+		self.update_payment_sales_invoice()
+
+	def update_payment_sales_invoice(self):
+		if self.paid_amount > 0:
+			amount = frappe.db.get_value("Sales Invoice",{"name":self.custom_sales_invoice_single},"outstanding_amount")
+			frappe.db.set_value("Sales Invoice",self.custom_sales_invoice_single,{"outstanding_amount":amount-self.paid_amount,"status":"Paid" if amount-self.paid_amount==0 else "Partly Paid"})
 
 	def set_liability_account(self):
 		# Auto setting liability account should only be done during 'draft' status
@@ -202,6 +286,15 @@ class PaymentEntry(AccountsController):
 		self.make_advance_payment_ledger_entries()
 		self.update_advance_paid()  # advance_paid_status depends on the payment request amount
 		self.set_status()
+		self.cancel_payment_sales_invoice()
+
+	def cancel_payment_sales_invoice(self):
+		if self.paid_amount > 0:
+			amount = frappe.db.get_value("Sales Invoice",{"name":self.custom_sales_invoice_single},"outstanding_amount")
+			invoice_total = frappe.db.get_value("Sales Invoice",{"name":self.custom_sales_invoice_single},"grand_total")
+			status = "Unpaid" if invoice_total-(amount+self.paid_amount)==0 else "Partly Paid"
+			frappe.db.set_value("Sales Invoice",self.custom_sales_invoice_single,{"outstanding_amount":amount+self.paid_amount,"status":status})
+
 
 	def update_payment_requests(self, cancel=False):
 		from erpnext.accounts.doctype.payment_request.payment_request import (
@@ -3372,3 +3465,44 @@ def make_payment_order(source_name, target_doc=None):
 @erpnext.allow_regional
 def add_regional_gl_entries(gl_entries, doc):
 	return
+
+
+@frappe.whitelist(allow_guest=True)
+def payment_entry_total_amount(sales_invoices):
+    """
+    Get the total outstanding amount and total taxes and charges for the given Sales Invoices.
+    """
+    
+    sales_invoices = frappe.parse_json(sales_invoices)
+    
+    if not sales_invoices:
+        return {"outstanding_amount": 0, "total_taxes_and_charges": 0}
+    
+    # Handle single invoice case separately
+    if len(sales_invoices) == 1:
+        query = f"""
+            SELECT 
+                SUM(outstanding_amount) AS outstanding_amount, 
+                SUM(total_taxes_and_charges) AS total_taxes_and_charges
+            FROM 
+                `tabSales Invoice` 
+            WHERE 
+                name = '{sales_invoices[0]}'
+        """
+    else:
+        # Properly format tuple for multiple invoices
+        query = f"""
+            SELECT 
+                SUM(outstanding_amount) AS outstanding_amount, 
+                SUM(total_taxes_and_charges) AS total_taxes_and_charges
+            FROM 
+                `tabSales Invoice` 
+            WHERE 
+                name IN {tuple(sales_invoices)}
+        """
+    
+    result = frappe.db.sql(query, as_dict=True)
+    
+    # Return the result as a dictionary
+    return result[0] if result else {"outstanding_amount": 0, "total_taxes_and_charges": 0}
+
