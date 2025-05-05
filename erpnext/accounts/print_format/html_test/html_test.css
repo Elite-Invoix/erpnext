@@ -1,3 +1,71 @@
-.print-format {
-    padding: 0 !important;
-  }
+.invoice-container {
+  font-family: "Helvetica", sans-serif;
+  padding: 20px;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.company-details p,
+.customer-details p,
+.invoice-info p,
+.footer p,
+.bank-details p,
+.totals p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.divider {
+  border: 1px solid #000;
+  margin: 20px 0;
+}
+
+.invoice-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.customer-details {
+  margin-bottom: 20px;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.invoice-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.totals, .bank-details {
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 13px;
+  text-align: center;
+  color: #555;
+}
