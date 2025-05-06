@@ -4,6 +4,7 @@
 frappe.provide("erpnext.company");
 
 frappe.ui.form.on("Company", {
+
 	onload: function (frm) {
 		if (frm.doc.__islocal && frm.doc.parent_company) {
 			frappe.db.get_value("Company", frm.doc.parent_company, "is_group", (r) => {
@@ -17,8 +18,18 @@ frappe.ui.form.on("Company", {
 				frm.toggle_enable("default_currency", !r.message);
 			});
 		}
+		frm.set_query("custom_account_name", function () {
+			return {
+				filters: {
+					is_company_account: 1,
+					company: frm.doc.name,
+					disabled: 0,
+				}
+			};
+		});
 	},
 	setup: function (frm) {
+		console.log("setup");
 		frm.__rename_queue = "long";
 
 		frm.set_query("parent_company", function () {
@@ -51,6 +62,7 @@ frappe.ui.form.on("Company", {
 			};
 		});
 	},
+
 
 	company_name: function (frm) {
 		if (frm.doc.__islocal) {
@@ -205,7 +217,7 @@ frappe.ui.form.on("Company", {
 										company: data.company_name,
 									},
 									freeze: true,
-									callback: function (r, rt) {},
+									callback: function (r, rt) { },
 									onerror: function () {
 										frappe.msgprint(__("Wrong Password"));
 									},
