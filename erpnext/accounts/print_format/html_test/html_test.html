@@ -17,11 +17,11 @@
     <div class="header">
        <div class="logo">
             {% if company.company_logo %}
-                <img src="{{ company.company_logo }}" alt="Company Logo" width="100" height="100">
+                <img src="{{ company.company_logo }}" alt="Company Logo" width="180" height="180">
             {% endif %}
         </div><div class="company-details">
             {% if company %}
-            <p><strong>{{ company.name.upper() }}</strong></p>
+            <h2><strong>{{ company.name.upper() }}</strong></h2>
             <p>{{ company.custom_street_no or "" }}, {{ company.custom_address_line_1 or "" }}</p>
             <p>{{ company.custom_address_line_2 or "" }}</p>
             <p>{{ (company.custom_postal_code or "") }} {{ (doc.custom_company_city or "").upper() }}</p>
@@ -71,7 +71,7 @@
             {% if bank_account %}
            
           
-            <p style="font-size: medium;">Bank Details: </p>
+            <p style="font-size: 14px;">Bank Details: </p>
             <br>
             <table>
                 <tr>
@@ -109,7 +109,7 @@
         </div>
     </div>
     <div class="total-words"> <p><strong><i>{{frappe.utils.money_in_words(doc.grand_total,"Ringgit")}} </i></strong></p></div>
-   <div id="footer-html">
+   <div class="no-page-break">
     <div class="contact-info">
         Thank you for your business! <br>
         We appreciate your trust in {{ company.name }}. If you have any questions or need assistance, feel free to contact us at {{company.custom_email_address}}<br>

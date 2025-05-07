@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .invoice-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #000;
 }
 
 .header {
@@ -10,13 +15,13 @@
 }
 
 .header div:nth-of-type(1) {
-  width: 65%;
+  width: 62%;
   display: inline-block;
-  vertical-align: top;
+ margin-top: 20px
 }
 
 .header div:nth-of-type(2) {
-  width: 35%;
+  width: 38%;
   display: inline-block;
   vertical-align: top;
 }
@@ -28,8 +33,8 @@
 .bank-details p,
 .totals p {
   margin: 4px 0;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
-
 }
 
 .logo img {
@@ -45,21 +50,20 @@
 .invoice-info {
   width: 100%;
   margin-bottom: 20px;
+  font-size: 14px;
 }
 
 .invoice-info div:nth-child(1) {
-  width: 65%;
+  width: 62%;
   float: left;
 }
 
 .invoice-info div:nth-child(2) {
-  width: 35%;
+  width: 38%;
   float: left;
 }
 
-
 .invoice-to {
-
   width: 100%;
   margin-bottom: 20px;
 }
@@ -70,17 +74,13 @@
 }
 
 .invoice-to div:nth-child(2) {
-
   width: 20%;
   float: left;
 }
 
-
-
 .customer-details {
   margin-bottom: 20px;
   margin-top: 20px !important;
-
 }
 
 .invoice-table {
@@ -88,7 +88,9 @@
   border-collapse: collapse;
   margin-bottom: 20px;
   margin-top: 100px;
-  color: #000
+  color: #000;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .invoice-table th,
@@ -96,52 +98,36 @@
   border: 1px solid #000000;
   padding: 8px 12px;
   text-align: left;
-  font-size: 13px;
   color: #000;
 }
 
 .invoice-table th {
-
-  font-weight: bold;
-}
-
-/* .totals, .bank-details {
-  margin-top: 20px;
-} */
-
-/* .totals-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-  padding: 10px;
-} */
-
-
-
-.totals-box p {
-  margin: 6px 0;
+  font-weight: 600;
   font-size: 14px;
 }
 
-.totals-box table {
-  font-size: 15px;
+.totals-box p {
+  margin: 6px 0;
+}
 
+.totals-box table {
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .totals-box table tbody td:nth-of-type(2) {
   text-align: right;
-
+  color: #000;
 }
 
 .bank-details table tbody tr td {
-  font-size: 15px;
+  font-size: 14px;
   padding: 0 !important;
   margin: 0;
+  color: #000;
 }
 
-
 .highlighted-total {
-
   padding-top: 8px;
   padding-bottom: 8px;
   margin-top: 10px;
@@ -149,38 +135,47 @@
   font-weight: bold;
 }
 
-
 .bank-and-totals {
   width: 100%;
   padding-top: 20px;
 }
 
 .bank-and-totals div:nth-child(1) {
-  width: 55%;
+  width: 50%;
   display: inline-block;
   vertical-align: top;
 }
 
 .bank-and-totals div:nth-child(2) {
-  width: 45%;
+  width: 50%;
   display: inline-block;
   vertical-align: top;
-
 }
 
+.bank-and-totals  table td {
+  width:200px;
+}
 
 .total-words {
   width: 100%;
   text-align: right;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px;
 }
 
 .contact-info {
   width: 100%;
   text-align: center;
-
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 .qr-code {
   width: 100%;
   text-align: right;
+}
+.no-page-break {
+  page-break-inside: avoid;
 }
