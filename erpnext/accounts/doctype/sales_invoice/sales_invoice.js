@@ -17,6 +17,18 @@ erpnext.accounts.SalesInvoiceController = class SalesInvoiceController extends (
 		this.setup_posting_date_time_check();
 		super.setup(doc);
 		console.log("setup");
+
+		const me = this;
+
+		this.frm.set_query("custom_bank_account", function () {
+			return {
+				filters: {
+					is_company_account: 1,
+					company: me.frm.doc.company,
+					disabled: 0,
+				}
+			};
+		});
 	}
 	company() {
 		super.company();

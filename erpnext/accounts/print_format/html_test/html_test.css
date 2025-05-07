@@ -1,13 +1,24 @@
 .invoice-container {
-  font-family: "Helvetica", sans-serif;
-  padding: 20px;
-  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  width: 100%;
+  height: 20%;
+}
+
+.header div:nth-of-type(1) {
+  width: 65%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header div:nth-of-type(2) {
+  width: 35%;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .company-details p,
@@ -18,6 +29,7 @@
 .totals p {
   margin: 4px 0;
   font-size: 14px;
+
 }
 
 .logo img {
@@ -31,41 +43,144 @@
 }
 
 .invoice-info {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
   margin-bottom: 20px;
 }
 
+.invoice-info div:nth-child(1) {
+  width: 65%;
+  float: left;
+}
+
+.invoice-info div:nth-child(2) {
+  width: 35%;
+  float: left;
+}
+
+
+.invoice-to {
+
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.invoice-to div:nth-child(1) {
+  width: 80%;
+  float: left;
+}
+
+.invoice-to div:nth-child(2) {
+
+  width: 20%;
+  float: left;
+}
+
+
+
 .customer-details {
   margin-bottom: 20px;
+  margin-top: 20px !important;
+
 }
 
 .invoice-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  margin-top: 100px;
+  color: #000
 }
 
 .invoice-table th,
 .invoice-table td {
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   padding: 8px 12px;
   text-align: left;
   font-size: 13px;
+  color: #000;
 }
 
 .invoice-table th {
-  background-color: #f4f4f4;
+
   font-weight: bold;
 }
 
-.totals, .bank-details {
+/* .totals, .bank-details {
   margin-top: 20px;
+} */
+
+/* .totals-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding: 10px;
+} */
+
+
+
+.totals-box p {
+  margin: 6px 0;
+  font-size: 14px;
 }
 
-.footer {
-  margin-top: 40px;
-  font-size: 13px;
+.totals-box table {
+  font-size: 15px;
+
+}
+
+.totals-box table tbody td:nth-of-type(2) {
+  text-align: right;
+
+}
+
+.bank-details table tbody tr td {
+  font-size: 15px;
+  padding: 0 !important;
+  margin: 0;
+}
+
+
+.highlighted-total {
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.bank-and-totals {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.bank-and-totals div:nth-child(1) {
+  width: 55%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.bank-and-totals div:nth-child(2) {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+
+.total-words {
+  width: 100%;
+  text-align: right;
+}
+
+.contact-info {
+  width: 100%;
   text-align: center;
-  color: #555;
+
+}
+
+.qr-code {
+  width: 100%;
+  text-align: right;
 }

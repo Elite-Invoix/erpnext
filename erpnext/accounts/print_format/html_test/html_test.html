@@ -1,72 +1,173 @@
-<style>
+<style type="text/css">
     {% include "erpnext/accounts/print_format/html_test/html_test.css" %}
-    </style>
+</style>
     
-    {% set company = frappe.get_doc("Company", doc.company) %}
-    {% set customer = frappe.get_doc("Customer", doc.customer) %}
-    {% set payment_entries = frappe.get_all('Payment Entry Reference', filters={'reference_name': doc.name}, fields=['parent']) %}
-    
-   
+{% set company = frappe.get_doc("Company", doc.company) %}
+{% set customer = frappe.get_doc("Customer", doc.customer) %}
+{% set payment_entries = frappe.get_all('Payment Entry Reference', filters={'reference_name': doc.name}, fields=['parent']) %}
+{% if company.custom_account_name %}
+{% set bank_account = frappe.get_doc("Bank Account",company.custom_account_name)%} 
 
+{% endif %}
+{% set pr = [1] %}
+{% set lines = [0] %}
+{% set items_per_page = 6 %}
 
-    <div class="invoice-container">
-        <div class="header">
-            <div class="company-details">
-                {% if company %}
-                    <p><strong>{{ company.name }}</strong></p>
-                    <p>{{ company.custom_street_no or "" }}, {{ company.custom_address_line_1 or "" }}</p>
-                    <p>{{ company.custom_address_line_2 or "" }}</p>
-                    <p>{{ company.custom_postal_code or "" }} {{ doc.custom_company_city or "" }}</p>
-                    <p>{{ doc.custom_company_state or "" }}</p>
-                    <p>Email: {{ company.custom_email_address or "" }}</p>
-                    <p>Phone: {{ company.custom_contact_number or "" }}</p>
-                {% endif %}
-            </div>
-            <div class="logo">
-                
-                <img src="{{ company.company_logo }}" alt="Company Logo">
-            </div>
+{% macro above_items() %}
+    <div class="header">
+       <div class="logo">
+            {% if company.company_logo %}
+                <img src="{{ company.company_logo }}" alt="Company Logo" width="100" height="100">
+            {% endif %}
+        </div><div class="company-details">
+            {% if company %}
+            <p><strong>{{ company.name.upper() }}</strong></p>
+            <p>{{ company.custom_street_no or "" }}, {{ company.custom_address_line_1 or "" }}</p>
+            <p>{{ company.custom_address_line_2 or "" }}</p>
+            <p>{{ (company.custom_postal_code or "") }} {{ (doc.custom_company_city or "").upper() }}</p>
+            <p>{{ (doc.custom_company_state or "").upper() }}</p>
+            <p>Email: {{ company.custom_email_address or "" }}</p>
+            <p>Phone: {{ company.custom_contact_number or "" }}</p>
+            
+            {% endif %}
         </div>
+    </div>
     
-        <hr class="divider"/>
+    <hr class="divider"/>
     
-        <div class="invoice-info">
-            <div>
-                <p><strong>Registration No.:</strong> {{ company.custom_business_registration_no }}</p>
-                <p><strong>Income Tax No. (TIN):</strong> {{ company.custom_business_tin_no }}</p>
-                <p><strong>SST No.:</strong> {{ company.custom_sst_reg_no or "N/A" }}</p>
-                <p><strong>MSIC Code:</strong> {{ company.custom_msic_code or "N/A" }}</p>
-            </div>
-            <div>
-                <p><strong>Invoice No.:</strong> {{ doc.name }}</p>
-                <p><strong>Date:</strong> {{ frappe.utils.formatdate(doc.posting_date) }}</p>
-                <p><strong>Payment Mode:</strong> {{ doc.mode_of_payment or "Cash" }}</p>
-                <p><strong>Currency:</strong> {{ doc.currency or "MYR" }}</p>
-            </div>
+    <div class="invoice-info">
+        <div>
+            <p><strong>Registration No.:</strong> {{ company.custom_business_registration_no }}</p>
+            <p><strong>Income Tax No. (TIN):</strong> {{ company.custom_business_tin_no }}</p>
+            <p><strong>SST No.:</strong> {{ company.custom_sst_reg_no or "N/A" }}</p>
+            <p><strong>MSIC Code:</strong> {{ company.custom_msic_code or "N/A" }}</p>
+        </div><div>
+            <p><strong>Invoice No.:</strong> {{ doc.name }}</p>
+            <p><strong>Date:</strong> {{ frappe.utils.formatdate(doc.posting_date) }}</p>
+            <p><strong>Payment Mode:</strong> {{ doc.mode_of_payment or "Cash" }}</p>
+            <p><strong>Currency:</strong> {{ doc.currency or "MYR" }}</p>
         </div>
-    
-        <div class="customer-details">
-            {% if customer %}
-            <p><strong>Customer Name:</strong> {{ customer.customer_name }}</p>
+    </div>
+    <div class="invoice-to">
+    <div class="customer-details">
+        {% if customer %}
+            <p><strong>Buyer:</strong>
+            <p><strong>Name:</strong> {{ customer.customer_name }}</p>
             <p><strong>Registration No.:</strong> {{ customer.custom_business_registration_number or "" }}</p>
             <p><strong>Income Tax No. (TIN):</strong> {{ customer.custom_tin_number or "" }}</p>
             <p><strong>SST No.:</strong> {{ customer.custom_sst_registration_number or "N/A" }}</p>
             <p><strong>MSIC Code:</strong> {{ customer.custom_msic_code or "" }}</p>
-            {% endif %}
-        </div>
+        {% endif %}
+    </div><div>
+        <h1><strong>E-Invoice</strong></h1>
+    </div>
+    </div>
     
-        <table class="invoice-table">
-            <thead>
+    {% endmacro %}
+    
+    {% macro below_items() %}
+    <div class="bank-and-totals">
+        <div class="bank-details">
+            {% if bank_account %}
+           
+          
+            <p style="font-size: medium;">Bank Details: </p>
+            <br>
+            <table>
                 <tr>
-                    <th>No</th>
-                    <th>Description</th>
-                    <th>Qty</th>
-                    <th>Unit Price</th>
-                    <th>Total Amount</th>
+                    
+                    <td>{{ bank_account.bank or "" }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for item in doc.items %}
+                <tr>
+                   
+                    <td>{{ bank_account.bank_account_no or "" }}</td>
+                </tr>
+                <tr>
+                   
+                    <td>{{ bank_account.custom_swift_code or "" }}</td>
+                </tr>
+            </table>
+              
+            {% endif %}
+        </div><div class="totals-box">
+            <table>
+                <tr>
+                    <td><strong>Total excluding tax:</strong></td>
+                    <td>RM {{ "{:,.2f}".format(doc.net_total) }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Tax amount:</strong></td>
+                    <td>RM {{ "{:,.2f}".format(doc.total_taxes_and_charges) }}</td>
+                </tr>
+                <tr class="highlighted-total">
+                    <td><strong>Total including tax:</strong></td>
+                    <td >RM {{ "{:,.2f}".format(doc.grand_total) }}</td>
+                </tr>
+               
+            </table>
+           
+        </div>
+    </div>
+    <div class="total-words"> <p><strong><i>{{frappe.utils.money_in_words(doc.grand_total,"Ringgit")}} </i></strong></p></div>
+   <div id="footer-html">
+    <div class="contact-info">
+        Thank you for your business! <br>
+        We appreciate your trust in {{ company.name }}. If you have any questions or need assistance, feel free to contact us at {{company.custom_email_address}}<br>
+        <hr>
+        This invoice is computer-generated and does not require a signature.
+        <hr>
+    </div>
+      <div class="qr-code">
+        {% if doc.custom_invoice_url %}
+        <img src="{{ get_qr_code_base64(doc.custom_invoice_url) }}" width="100" height="100" alt="QR Code">
+        {% endif %}
+      </div>
+       
+    
+   </div>
+
+    
+    {% endmacro %}
+    
+    {# --- Render Above Section --- #}
+
+    
+    {{ above_items() }}
+
+    <table class="invoice-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Unit Price</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in doc.items %}
+    
+                {# --- Add Page Break and Restart Table Every X Items --- #}
+                {% if loop.index0 != 0 and loop.index0 % items_per_page == 0 %}
+                    </tbody>
+                </table>
+    
+                <div style="page-break-before: always;"></div>
+                    <br/>
+                   
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Description</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                {% endif %}
+    
                 <tr>
                     <td>{{ loop.index }}</td>
                     <td>{{ item.item_name }}</td>
@@ -74,33 +175,15 @@
                     <td>RM {{ "{:,.2f}".format(item.rate) }}</td>
                     <td>RM {{ "{:,.2f}".format(item.amount) }}</td>
                 </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    
-        <div class="totals">
-            <p><strong>Total excluding tax:</strong> RM {{ "{:,.2f}".format(doc.net_total) }}</p>
-            <p><strong>Tax amount:</strong> RM {{ "{:,.2f}".format(doc.total_taxes_and_charges) }}</p>
-            <p><strong>Total including tax:</strong> RM {{ "{:,.2f}".format(doc.grand_total) }}</p>
-        </div>
-    
-        <div class="bank-details">
-            {% if payment_entries %}
-                {% set payment_entry = frappe.get_doc('Payment Entry', payment_entries[0].parent) %}
-                {% if payment_entry.party_bank_account %}
-                    {% set bank = frappe.get_doc('Bank Account', payment_entry.party_bank_account) %}
-                    <p><strong>Bank Name:</strong> {{ bank.bank }}</p>
-                    <p><strong>Account No.:</strong> {{ bank.bank_account_no }}</p>
-                    <p><strong>SWIFT Code:</strong> {{ bank.custom_swift_code or "N/A" }}</p>
+                
+                {% if loop.last %}
+                
                 {% endif %}
-            {% endif %}
-        </div>
     
-        <div class="footer">
-            <p>Thank you for your business!</p>
-            <p>We appreciate your trust in {{ company.name }}</p>
-            <p>Contact us at: {{ company.custom_email_address }}</p>
-            <p><small>This invoice is computer-generated and does not require a signature.</small></p>
-        </div>
-    </div>
+                
+            {% endfor %}
+        </tbody>
+    </table>
+    {{ below_items() }}
+    {# --- Render Footer Only Once --- #}
     

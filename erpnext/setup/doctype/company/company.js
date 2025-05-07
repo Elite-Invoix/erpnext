@@ -18,15 +18,7 @@ frappe.ui.form.on("Company", {
 				frm.toggle_enable("default_currency", !r.message);
 			});
 		}
-		frm.set_query("custom_account_name", function () {
-			return {
-				filters: {
-					is_company_account: 1,
-					company: frm.doc.name,
-					disabled: 0,
-				}
-			};
-		});
+	
 	},
 	setup: function (frm) {
 		console.log("setup");

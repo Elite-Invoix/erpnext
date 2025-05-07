@@ -91,6 +91,7 @@ demo_transaction_doctypes = [
 jinja = {
 	"methods": [
 		"erpnext.stock.serial_batch_bundle.get_serial_or_batch_nos",
+		"erpnext.accounts.print_format.html_test.jinja.get_qr_code_base64",
 	],
 }
 
