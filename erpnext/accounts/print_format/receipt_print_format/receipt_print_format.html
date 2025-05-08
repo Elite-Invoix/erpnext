@@ -1,5 +1,5 @@
 <style type="text/css">
-    {% include "erpnext/selling/print_format/quotation_print_format/quotation_print_format.css" %}
+    {% include "erpnext/accounts/print_format/receipt_print_format/receipt_print_format.css" %}
 </style>
     
 {% set company = frappe.get_doc("Company", doc.company) %}
@@ -79,7 +79,7 @@
     </div>
     <div class="total-words"> <p><strong><i>{{frappe.utils.money_in_words(doc.paid_amount,"Ringgit")}} </i></strong></p></div>
     
-   <div class="no-page-break">
+   <div class="no-page-break" id="footer-html">
     <div class="contact-info">
         Thank you for your business! <br>
         We appreciate your trust in {{ company.name }}. If you have any questions or need assistance, feel free to contact us at {{company.custom_email_address}}<br>
@@ -99,26 +99,6 @@
 
     
     {{ above_items() }}
-
-    <table class="invoice-table">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Description</th>
-                <th>Total Amount</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in doc.items %}
-    
-                {# --- Add Page Break and Restart Table Every X Items --- #}
-                {% if loop.index0 != 0 and loop.index0 % items_per_page == 0 %}
-                    </tbody>
-                </table>
-    
-                <div style="page-break-before: always;"></div>
-                    <br/>
-                   
                 <table class="invoice-table">
                     <thead>
                         <tr>
@@ -128,20 +108,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                {% endif %}
+              
     
                 <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ item.custom_sales_invoice_single }}</td>
-                    <td>RM {{ "{:,.2f}".format(item.paid_amount) }}</td>
+                    <td>1</td>
+                    <td>{{ doc.custom_sales_invoice_single }}</td>
+                    <td>RM {{doc.paid_amount }}</td>
                 </tr>
                 
-                {% if loop.last %}
+             
                 
-                {% endif %}
-    
-                
-            {% endfor %}
+   
         </tbody>
     </table>
     {{ below_items() }}

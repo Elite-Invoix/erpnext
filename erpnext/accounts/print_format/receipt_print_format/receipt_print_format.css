@@ -69,12 +69,12 @@
 }
 
 .invoice-to div:nth-child(1) {
-  width: 70%;
+  width: 62%;
   float: left;
 }
 
 .invoice-to div:nth-child(2) {
-  width: 30%;
+  width: 38%;
   float: left;
 }
 
