@@ -24,8 +24,7 @@
             <h2><strong>{{ company.name.upper() }}</strong></h2>
             <p>{{ company.custom_street_no or "" }}, {{ company.custom_address_line_1 or "" }}</p>
             <p>{{ company.custom_address_line_2 or "" }}</p>
-            <p>{{ (company.custom_postal_code or "") }} {{ (doc.custom_company_city or "").upper() }}</p>
-            <p>{{ (doc.custom_company_state or "").upper() }}</p>
+            <p>{{ (company.custom_postal_code or "") }}, {{ (doc.custom_company_city or "").upper() }}, {{ (doc.custom_company_state or "").upper() }}</p>
             <p>Email: {{ company.custom_email_address or "" }}</p>
             <p>Phone: {{ company.custom_contact_number or "" }}</p>
             
