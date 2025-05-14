@@ -69,15 +69,15 @@
             
         </div><div class="totals-box">
             <table>
-                <tr>
+                <tr style="line-height: 0.5;">
                     <td><strong>Total excluding tax:</strong></td>
                     <td>RM {{ "{:,.2f}".format(doc.net_total) }}</td>
                 </tr>
-                <tr>
+                <tr style="line-height: 0.5;">
                     <td><strong>Tax amount:</strong></td>
                     <td>RM {{ "{:,.2f}".format(doc.total_taxes_and_charges) }}</td>
                 </tr>
-                <tr class="highlighted-total">
+                <tr class="highlighted-total" style="line-height: 0.5;">
                     <td><strong>Total including tax:</strong></td>
                     <td >RM {{ "{:,.2f}".format(doc.grand_total) }}</td>
                 </tr>
