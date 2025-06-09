@@ -141,6 +141,7 @@ class Customer(TransactionBase):
 		self.validate_internal_customer()
 		self.add_role_for_user()
 		self.validate_currency_for_receivable_payable_and_advance_account()
+		self.validate_eif()
 
 		# set loyalty program tier
 		if frappe.db.exists("Customer", self.name):
@@ -229,6 +230,18 @@ class Customer(TransactionBase):
 			self.copy_communication()
 
 		self.update_customer_groups()
+
+		if self.has_value_changed("custom_tin_number"):
+			frappe.db.set_value("Sales Invoice",{"customer": self.name}, "custom_customer_tin_no",self.custom_tin_number)
+	
+	def validate_eif(self):
+		is_einvoice_enabled = frappe.db.get_value('Company',self.custom_company_name,'custom_enable_einvoicing')
+		if is_einvoice_enabled:
+			if (self.custom_buyer_type == 'B2B' or self.custom_buyer_type == 'B2C' or self.custom_buyer_type == 'B2G') and self.custom_tin_number == 'NA':
+				frappe.throw(_("Please enter TIN Number for B2B transactions."))
+			if self.custom_buyer_type == 'B2B' or self.custom_buyer_type == 'B2G':
+				if self.custom_business_registration_number == 'NA':
+					frappe.throw(_("Please enter Business Registration Number for B2B and B2G transactions."))
 
 	def add_role_for_user(self):
 		for portal_user in self.portal_users:

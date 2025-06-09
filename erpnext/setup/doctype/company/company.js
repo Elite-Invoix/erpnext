@@ -21,7 +21,6 @@ frappe.ui.form.on("Company", {
 	
 	},
 	setup: function (frm) {
-		console.log("setup");
 		frm.__rename_queue = "long";
 
 		frm.set_query("parent_company", function () {
@@ -159,6 +158,7 @@ frappe.ui.form.on("Company", {
 				}
 			}
 		}
+		
 
 		erpnext.company.set_chart_of_accounts_options(frm.doc);
 	},

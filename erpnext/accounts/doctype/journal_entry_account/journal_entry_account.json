@@ -82,6 +82,7 @@
   {
    "fieldname": "party_type",
    "fieldtype": "Link",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Party Type",
    "options": "DocType",
@@ -91,6 +92,7 @@
    "columns": 2,
    "fieldname": "party",
    "fieldtype": "Dynamic Link",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Party",
    "options": "party_type"
@@ -189,6 +191,7 @@
   {
    "fieldname": "reference_name",
    "fieldtype": "Dynamic Link",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Reference Name",
    "no_copy": 1,
@@ -268,7 +271,7 @@
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-05 01:10:50.224840",
+ "modified": "2025-05-23 01:10:22.575418",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Journal Entry Account",

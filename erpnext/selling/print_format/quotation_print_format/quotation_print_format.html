@@ -22,9 +22,10 @@
         </div><div class="company-details">
             {% if company %}
             <h2><strong>{{ company.name.upper() }}</strong></h2>
-            <p>{{ company.custom_street_no or "" }}, {{ company.custom_address_line_1 or "" }}</p>
+            <p>{{ company.custom_street_no or "" }}</p>
+            <p>{{ company.custom_address_line_1 or "" }}</p>
             <p>{{ company.custom_address_line_2 or "" }}</p>
-            <p>{{ (company.custom_postal_code or "") }}, {{ (doc.custom_company_city or "").upper() }}, {{ (doc.custom_company_state or "").upper() }}</p>
+            <p>{{ (company.custom_postal_code or "") }}, {{ (doc.custom_company_city or "") }}, {{ (doc.custom_company_state or "") }}</p>
             <p>Email: {{ company.custom_email_address or "" }}</p>
             <p>Phone: {{ company.custom_contact_number or "" }}</p>
             
@@ -41,7 +42,7 @@
             <p><strong>SST No.:</strong> {{ company.custom_sst_reg_no or "N/A" }}</p>
             <p><strong>MSIC Code:</strong> {{ company.custom_msic_code or "N/A" }}</p>
         </div><div>
-            <p><strong>Quotation No.:</strong> {{ doc.name }}</p>
+            <p><strong>Qtn No.:</strong> {{ doc.name }}</p>
             <p><strong>Date:</strong> {{ frappe.utils.formatdate(doc.transaction_date) }}</p>
             <p><strong>Currency:</strong> {{ doc.currency or "MYR" }}</p>
         </div>
@@ -92,7 +93,7 @@
     <div class="contact-info">
         Thank you for your business! <br>
         We appreciate your trust in {{ company.name }}. If you have any questions or need assistance, feel free to contact us at {{company.custom_email_address}}<br>
-        This invoice is computer-generated and does not require a signature.
+        This quotation is computer-generated and does not require a signature.
         <hr>
     </div>
     
