@@ -75,7 +75,7 @@ erpnext.accounts.SalesInvoiceController = class SalesInvoiceController extends (
 		}
 	}
 
-	refresh(doc, dt, dn) {
+	async refresh(doc, dt, dn) {
 		const me = this;
 		super.refresh();
 		if (cur_frm.msgbox && cur_frm.msgbox.$wrapper.is(":visible")) {
@@ -96,8 +96,19 @@ erpnext.accounts.SalesInvoiceController = class SalesInvoiceController extends (
 		// 	this.show_stock_ledger();
 		// 	erpnext.accounts.ledger_preview.show_stock_ledger_preview(this.frm);
 		// }
-
-		if (doc.docstatus == 1 &&  !doc.custom_guid) { // &&  !doc.custom_guid
+		let einvoice_enabled = false;
+		await frappe.call({
+			method:
+				"frappe.server_overrides.company.is_einvoice_enabled",
+			args: {
+				company: doc.company
+			},
+			callback: function (r) {
+				console.log("E-Invoice Enabled: ", r);				
+				einvoice_enabled = r.message;
+			},
+		});
+		if (doc.docstatus == 1 &&  !doc.custom_guid && einvoice_enabled == true && !doc.is_return) { // &&  !doc.custom_guid
 			this.frm.add_custom_button(__("LHDN Validation"), function(){
 				frappe.call({
 					method: "frappe.data_api.data.send_invoice",

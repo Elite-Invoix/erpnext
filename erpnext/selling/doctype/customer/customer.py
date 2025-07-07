@@ -238,7 +238,7 @@ class Customer(TransactionBase):
 		is_einvoice_enabled = frappe.db.get_value('Company',self.custom_company_name,'custom_enable_einvoicing')
 		if is_einvoice_enabled:
 			if (self.custom_buyer_type == 'B2B' or self.custom_buyer_type == 'B2C' or self.custom_buyer_type == 'B2G') and self.custom_tin_number == 'NA':
-				frappe.throw(_("Please enter TIN Number for B2B transactions."))
+				frappe.throw(_("Please enter TIN Number for B2B/B2C/B2G transactions."))
 			if self.custom_buyer_type == 'B2B' or self.custom_buyer_type == 'B2G':
 				if self.custom_business_registration_number == 'NA':
 					frappe.throw(_("Please enter Business Registration Number for B2B and B2G transactions."))
