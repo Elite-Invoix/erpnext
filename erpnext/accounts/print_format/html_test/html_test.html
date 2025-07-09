@@ -5,8 +5,8 @@
 {% set company = frappe.get_doc("Company", doc.company) %}
 {% set customer = frappe.get_doc("Customer", doc.customer) %}
 {% set payment_entries = frappe.get_all('Payment Entry Reference', filters={'reference_name': doc.name}, fields=['parent']) %}
-{% if company.custom_account_name %}
-{% set bank_account = frappe.get_doc("Bank Account",company.custom_account_name)%} 
+{% if doc.custom_bank_account %}
+{% set bank_account = frappe.get_doc("Bank Account",doc.custom_bank_account)%} 
 
 {% endif %}
 {% set pr = [1] %}
