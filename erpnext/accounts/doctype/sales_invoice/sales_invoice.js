@@ -887,6 +887,10 @@ frappe.ui.form.on("Sales Invoice", {
 
 	onload: function (frm) {
 		frm.redemption_conversion_factor = null;
+		if(frm.is_new()){
+			console.log("is new");
+			frm.trigger("company");
+		}
 	},
 
 	update_stock: function (frm, dt, dn) {
