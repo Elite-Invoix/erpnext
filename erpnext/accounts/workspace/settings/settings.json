@@ -1,0 +1,70 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"8fa2McoHU9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Settings</span>\",\"col\":12}},{\"id\":\"a3dys8Exgp\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h2\\\"><b><span class=\\\"h4\\\">Merchant Profiles</span>&nbsp;</b></span>\",\"col\":12}},{\"id\":\"tTuzK8iKpu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":4}},{\"id\":\"QnpSxBA-Hn\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Products</span>\",\"col\":12}},{\"id\":\"0vOutk8R_X\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"yI3SuQHPzH\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><span class=\\\"h4\\\">Users</span>&nbsp;</span>\",\"col\":12}},{\"id\":\"-jlAga6Zfv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":4}},{\"id\":\"w5lGouF9iY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Permission\",\"col\":4}},{\"id\":\"_nu5Y6hioa\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tax</span>\",\"col\":12}},{\"id\":\"aYQTb7CtR-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice Tax Settings\",\"col\":4}}]",
+ "creation": "2024-11-26 17:48:18.194237",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Settings",
+ "links": [],
+ "modified": "2025-07-15 01:16:32.479466",
+ "modified_by": "Administrator",
+ "module": "Accounts",
+ "name": "Settings",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 43.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Item",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Company",
+   "link_to": "Company",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Sales Invoice Tax Settings",
+   "link_to": "Sales Taxes and Charges Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "User",
+   "link_to": "User",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "User Permission",
+   "link_to": "User Permission",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Settings"
+}
