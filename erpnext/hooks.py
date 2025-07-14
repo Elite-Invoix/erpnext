@@ -10,6 +10,27 @@ source_link = "https://github.com/frappe/erpnext"
 app_logo_url = "/assets/erpnext/images/erpnext-logo.svg"
 
 fixtures = ["Custom Field", "Property Setter"]
+fixtures = [
+    {
+        "dt": "Custom Field",
+    },
+    {
+        "dt": "Property Setter",
+    },
+    {
+        "dt":"Website Theme",
+    },
+    {
+        "dt": "Print Format",
+    },
+    {
+        "dt":"Client Script",
+    },
+    {
+        "dt":"Server Script",
+    }
+    
+]
 
 add_to_apps_screen = [
     {
