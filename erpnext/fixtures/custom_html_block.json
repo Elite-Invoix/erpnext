@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div id=\"root_element\">\n    <div id=\"welcome-user\">\n        Loading user information...\n    </div>\n</div>",
+  "modified": "2024-11-25 13:34:52.748100",
+  "name": "Display User Name",
+  "private": 0,
+  "roles": [],
+  "script": "// Assuming `root_element` is provided by default\nlet welcomeUserDiv = root_element.querySelector(\"#welcome-user\");\n\nif (welcomeUserDiv) {\n    // Update the content with dynamic user information, bold style, and the new format\n    welcomeUserDiv.innerHTML = `<h4 style=\"font-weight: bold;\">${frappe.session.user_fullname}'s Dashboard</h4>`;\n\n    // Apply additional CSS styling if needed (optional)\n    let h4Element = welcomeUserDiv.querySelector(\"h4\");\n    h4Element.style.fontSize = \"1.5rem\"; // Set font size\n    h4Element.style.color = \"#333\"; // Set text color\n    h4Element.style.margin = \"10px 0\"; // Set margin\n   // h4Element.style.fontFamily = \"Arial, sans-serif\"; // Set font family\n} else {\n    console.error(\"Element with ID 'welcome-user' not found inside root_element.\");\n}",
+  "style": null
+ }
+]

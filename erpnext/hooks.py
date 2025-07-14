@@ -29,6 +29,9 @@ fixtures = [
     {
         "dt": "Server Script",
     },
+    {
+        "dt":"Custom HTML Block"
+    }
 ]
 
 add_to_apps_screen = [
