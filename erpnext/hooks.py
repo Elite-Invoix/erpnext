@@ -29,7 +29,6 @@ fixtures = [
     {
         "dt": "Server Script",
     },
-    {"dt": "City"},
 ]
 
 add_to_apps_screen = [
