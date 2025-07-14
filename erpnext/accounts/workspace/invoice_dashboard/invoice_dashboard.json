@@ -1,0 +1,59 @@
+{
+ "charts": [
+  {
+   "chart_name": "Month to Month Sales",
+   "label": "Month to Month Sales"
+  },
+  {
+   "chart_name": "Top 10 Customers",
+   "label": "Top Customers"
+  },
+  {
+   "chart_name": "Year to Year Sales",
+   "label": "Year to Year Sales"
+  }
+ ],
+ "content": "[{\"id\":\"_MyXE_rjkZ\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Display User Name\",\"col\":12}},{\"id\":\"IZ9jHteZt0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Customers\",\"col\":6}},{\"id\":\"s3OWnOGAcW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Total Sales\",\"col\":6}},{\"id\":\"kPSOHi1sx3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Year To Date Sales\",\"col\":6}},{\"id\":\"wqtAs10oWp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Top Customers\",\"col\":6}},{\"id\":\"atW4pZPrbV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Month to Month Sales\",\"col\":12}},{\"id\":\"QRlI5SnRr5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Year to Year Sales\",\"col\":12}}]",
+ "creation": "2024-11-26 17:30:21.397995",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Display User Name",
+   "label": "Display User Name"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Invoice Dashboard",
+ "links": [],
+ "modified": "2025-07-15 01:13:25.237374",
+ "modified_by": "Administrator",
+ "module": "Accounts",
+ "name": "Invoice Dashboard",
+ "number_cards": [
+  {
+   "label": "Year To Date Sales",
+   "number_card_name": "Year To Date Sales"
+  },
+  {
+   "label": "Today's Total Sales",
+   "number_card_name": "Today\u2019s Total Sales"
+  },
+  {
+   "label": "Active Customers",
+   "number_card_name": "Active Customers"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 37.0,
+ "shortcuts": [],
+ "title": "Invoice Dashboard"
+}

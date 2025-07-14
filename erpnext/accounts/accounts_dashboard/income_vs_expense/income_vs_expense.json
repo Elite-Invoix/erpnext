@@ -1,0 +1,25 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Profit and Loss",
+   "width": "Full"
+  },
+  {
+   "chart": "Outgoing Bills (Sales Invoice)",
+   "width": "Full"
+  }
+ ],
+ "creation": "2024-12-23 14:31:49.888385",
+ "dashboard_name": "Income vs Expense",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 8,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-07-15 01:11:55.322469",
+ "modified_by": "Administrator",
+ "module": "Accounts",
+ "name": "Income vs Expense",
+ "owner": "Administrator"
+}
