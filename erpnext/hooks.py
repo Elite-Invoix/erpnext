@@ -18,18 +18,18 @@ fixtures = [
         "dt": "Property Setter",
     },
     {
-        "dt":"Website Theme",
+        "dt": "Website Theme",
     },
     {
         "dt": "Print Format",
     },
     {
-        "dt":"Client Script",
+        "dt": "Client Script",
     },
     {
-        "dt":"Server Script",
-    }
-    
+        "dt": "Server Script",
+    },
+    {"dt": "City"},
 ]
 
 add_to_apps_screen = [
