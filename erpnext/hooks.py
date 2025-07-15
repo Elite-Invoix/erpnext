@@ -29,15 +29,27 @@ fixtures = [
     {
         "dt": "Server Script",
     },
+    {"dt": "Custom HTML Block"},
+    {"dt": "Custom DocPerm"},
+    {"dt": "User Permission"},
     {
-        "dt":"Custom HTML Block"
+        "dt": "Workspace",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Buyers",
+                    "Receipt",
+                    "Purchase",
+                    "Settings",
+                    "Reports",
+                    "Sales",
+                    "Invoice Dashboard",
+                ],
+            ]
+        ],
     },
-    {
-        "dt":"Custom DocPerm"
-    },
-    {
-        "dt":"User Permission"
-    }
 ]
 
 add_to_apps_screen = [

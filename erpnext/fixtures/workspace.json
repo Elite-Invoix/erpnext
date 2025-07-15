@@ -1,0 +1,543 @@
+[
+ {
+  "charts": [
+   {
+    "chart_name": "Month to Month Sales",
+    "label": "Month to Month Sales",
+    "parent": "Invoice Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   },
+   {
+    "chart_name": "Top 10 Customers",
+    "label": "Top Customers",
+    "parent": "Invoice Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   },
+   {
+    "chart_name": "Year to Year Sales",
+    "label": "Year to Year Sales",
+    "parent": "Invoice Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   }
+  ],
+  "content": "[{\"id\":\"_MyXE_rjkZ\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Display User Name\",\"col\":12}},{\"id\":\"IZ9jHteZt0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Customers\",\"col\":6}},{\"id\":\"s3OWnOGAcW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today's Total Sales\",\"col\":6}},{\"id\":\"kPSOHi1sx3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Year To Date Sales\",\"col\":6}},{\"id\":\"wqtAs10oWp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Top Customers\",\"col\":6}},{\"id\":\"atW4pZPrbV\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Month to Month Sales\",\"col\":12}},{\"id\":\"QRlI5SnRr5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Year to Year Sales\",\"col\":12}}]",
+  "custom_blocks": [
+   {
+    "custom_block_name": "Display User Name",
+    "label": "Display User Name",
+    "parent": "Invoice Dashboard",
+    "parentfield": "custom_blocks",
+    "parenttype": "Workspace"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": null,
+  "indicator_color": "green",
+  "is_hidden": 0,
+  "label": "Invoice Dashboard",
+  "links": [],
+  "modified": "2025-07-15 15:23:41.566984",
+  "module": "",
+  "name": "Invoice Dashboard",
+  "number_cards": [
+   {
+    "label": "Year To Date Sales",
+    "number_card_name": "Year To Date Sales",
+    "parent": "Invoice Dashboard",
+    "parentfield": "number_cards",
+    "parenttype": "Workspace"
+   },
+   {
+    "label": "Today's Total Sales",
+    "number_card_name": "Today’s Total Sales",
+    "parent": "Invoice Dashboard",
+    "parentfield": "number_cards",
+    "parenttype": "Workspace"
+   },
+   {
+    "label": "Active Customers",
+    "number_card_name": "Active Customers",
+    "parent": "Invoice Dashboard",
+    "parentfield": "number_cards",
+    "parenttype": "Workspace"
+   }
+  ],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Invoice Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Admin Accounts"
+   },
+   {
+    "parent": "Invoice Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Accounts Manager"
+   }
+  ],
+  "sequence_id": 37.0,
+  "shortcuts": [],
+  "title": "Invoice Dashboard"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"ZPr0qPB9uY\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales</span>\",\"col\":12}},{\"id\":\"GvOrSZAsZv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"eZhwaLmg90\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"tgmqsYXp01\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Invoice\",\"col\":3}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "",
+  "indicator_color": "",
+  "is_hidden": 0,
+  "label": "Sales",
+  "links": [],
+  "modified": "2025-07-15 15:24:05.943310",
+  "module": "",
+  "name": "Sales",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Sales",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Admin Accounts"
+   },
+   {
+    "parent": "Sales",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "System Manager"
+   }
+  ],
+  "sequence_id": 38.0,
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Customers",
+    "link_to": "Customer",
+    "parent": "Sales",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Quotation",
+    "link_to": "Quotation",
+    "parent": "Sales",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": null,
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Invoice",
+    "link_to": "Sales Invoice",
+    "parent": "Sales",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
+  "title": "Sales"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"gkbGZq5Klg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Buyers</span>\",\"col\":12}},{\"id\":\"FrhTldBxGb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": null,
+  "indicator_color": "green",
+  "is_hidden": 1,
+  "label": "Buyers",
+  "links": [],
+  "modified": "2025-07-15 15:24:33.548477",
+  "module": "",
+  "name": "Buyers",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Buyers",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Admin Accounts"
+   }
+  ],
+  "sequence_id": 39.0,
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Customer",
+    "link_to": "Customer",
+    "parent": "Buyers",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
+  "title": "Buyers"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"BK4rQu9NzO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Receipts</span>\",\"col\":12}},{\"id\":\"CPoWBEq7ZR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Receipts\",\"col\":3}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "",
+  "indicator_color": "",
+  "is_hidden": 0,
+  "label": "Receipt",
+  "links": [],
+  "modified": "2025-07-15 15:24:27.322411",
+  "module": "",
+  "name": "Receipt",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Receipt",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Admin Accounts"
+   }
+  ],
+  "sequence_id": 40.0,
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Receipts",
+    "link_to": "Payment Entry",
+    "parent": "Receipt",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
+  "title": "Receipt"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"wHbWZjubzE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Purchase</span>\",\"col\":12}},{\"id\":\"cC2HIFCNaM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expenses\",\"col\":3}},{\"id\":\"25AM_myR7A\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vendors\",\"col\":3}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "",
+  "indicator_color": "",
+  "is_hidden": 0,
+  "label": "Purchase",
+  "links": [],
+  "modified": "2025-07-15 15:24:19.330788",
+  "module": "",
+  "name": "Purchase",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Purchase",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Admin Accounts"
+   }
+  ],
+  "sequence_id": 41.0,
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Expenses",
+    "link_to": "Journal Entry",
+    "parent": "Purchase",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Vendors",
+    "link_to": "Supplier",
+    "parent": "Purchase",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
+  "title": "Purchase"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"8fa2McoHU9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Settings</span>\",\"col\":12}},{\"id\":\"a3dys8Exgp\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h2\\\"><b><span class=\\\"h4\\\">Merchant Profiles</span>&nbsp;</b></span>\",\"col\":12}},{\"id\":\"tTuzK8iKpu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Company\",\"col\":4}},{\"id\":\"QnpSxBA-Hn\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Products</span>\",\"col\":12}},{\"id\":\"0vOutk8R_X\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"yI3SuQHPzH\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><span class=\\\"h4\\\">Users</span>&nbsp;</span>\",\"col\":12}},{\"id\":\"-jlAga6Zfv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":4}},{\"id\":\"w5lGouF9iY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Permission\",\"col\":4}},{\"id\":\"_nu5Y6hioa\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tax</span>\",\"col\":12}},{\"id\":\"aYQTb7CtR-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice Tax Settings\",\"col\":4}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "",
+  "indicator_color": "",
+  "is_hidden": 0,
+  "label": "Settings",
+  "links": [],
+  "modified": "2025-07-15 15:24:15.418862",
+  "module": "",
+  "name": "Settings",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Settings",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Admin Accounts"
+   }
+  ],
+  "sequence_id": 43.0,
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Item",
+    "link_to": "Item",
+    "parent": "Settings",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Company",
+    "link_to": "Company",
+    "parent": "Settings",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Sales Invoice Tax Settings",
+    "link_to": "Sales Taxes and Charges Template",
+    "parent": "Settings",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "User",
+    "link_to": "User",
+    "parent": "Settings",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "User Permission",
+    "link_to": "User Permission",
+    "parent": "Settings",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
+  "title": "Settings"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"CJpup-wnJ_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports</span>\",\"col\":12}},{\"id\":\"wpdx4QCc2f\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice Report\",\"col\":3}},{\"id\":\"rbXbaoqxFG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Receipt Report\",\"col\":3}},{\"id\":\"Mm1Lz9Bscl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Income vs Expense Report\",\"col\":3}},{\"id\":\"ff4tyLC2a4\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "",
+  "indicator_color": "",
+  "is_hidden": 0,
+  "label": "Reports",
+  "links": [],
+  "modified": "2025-07-15 15:24:11.173693",
+  "module": "",
+  "name": "Reports",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Reports",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Admin Accounts"
+   }
+  ],
+  "sequence_id": 42.0,
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Income vs Expense Report",
+    "link_to": "Income vs Expense",
+    "parent": "Reports",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": null,
+    "type": "Dashboard",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Receipt Report",
+    "link_to": null,
+    "parent": "Reports",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": null,
+    "type": "URL",
+    "url": "/app/payment-entry/view/report"
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Sales Invoice Report",
+    "link_to": null,
+    "parent": "Reports",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": null,
+    "type": "URL",
+    "url": "/app/sales-invoice/view/report"
+   }
+  ],
+  "title": "Reports"
+ }
+]
