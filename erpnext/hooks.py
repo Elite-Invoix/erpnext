@@ -31,6 +31,12 @@ fixtures = [
     },
     {
         "dt":"Custom HTML Block"
+    },
+    {
+        "dt":"Custom DocPerm"
+    },
+    {
+        "dt":"User Permission"
     }
 ]
 

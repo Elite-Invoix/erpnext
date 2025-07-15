@@ -30,7 +30,7 @@
  "is_hidden": 0,
  "label": "Invoice Dashboard",
  "links": [],
- "modified": "2025-07-15 01:13:25.237374",
+ "modified": "2025-07-15 15:03:33.487967",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Invoice Dashboard",
@@ -52,7 +52,11 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin Accounts"
+  }
+ ],
  "sequence_id": 37.0,
  "shortcuts": [],
  "title": "Invoice Dashboard"

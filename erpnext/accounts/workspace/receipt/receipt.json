@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Receipt",
  "links": [],
- "modified": "2025-07-15 01:16:37.416611",
+ "modified": "2025-07-15 15:03:56.814313",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Receipt",
@@ -22,7 +22,11 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin Accounts"
+  }
+ ],
  "sequence_id": 40.0,
  "shortcuts": [
   {

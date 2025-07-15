@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Sales",
  "links": [],
- "modified": "2025-07-15 01:16:15.000089",
+ "modified": "2025-07-15 15:04:35.393403",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales",
@@ -22,7 +22,11 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Admin Accounts"
+  }
+ ],
  "sequence_id": 38.0,
  "shortcuts": [
   {
