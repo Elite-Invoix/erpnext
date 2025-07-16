@@ -5,7 +5,13 @@ frappe.provide("erpnext.accounts");
 frappe.provide("erpnext.journal_entry");
 
 frappe.ui.form.on("Journal Entry", {
-	setup: function (frm) {
+	onload: async function (frm) {
+		if(frm.doc.company){
+			const resp=await frappe.db.get_value("Company",cur_frm.doc.company,"abbr")
+			frm.set_value("naming_series",`EXP-${resp.message.abbr}-.YYYY.-.MM.-.####`);
+		}
+	},
+	setup: function (frm) {	
 		frm.add_fetch("bank_account", "account", "account");
 		frm.ignore_doctypes_on_cancel_all = [
 			"Sales Invoice",
@@ -51,8 +57,6 @@ frappe.ui.form.on("Journal Entry", {
 	
 	
 	},
-
-
 	refresh: function (frm) {
 		erpnext.toggle_naming_series();
 
@@ -255,10 +259,10 @@ var update_jv_details = function (doc, r) {
 };
 
 erpnext.accounts.JournalEntry = class JournalEntry extends frappe.ui.form.Controller {
-	onload() {
+	async onload() {
 		this.load_defaults();
 		this.setup_queries();
-		erpnext.accounts.dimensions.setup_dimension_filters(this.frm, this.frm.doctype);
+		erpnext.accounts.dimensions.setup_dimension_filters(this.frm, this.frm.doctype);	
 	}
 
 	onload_post_render() {
