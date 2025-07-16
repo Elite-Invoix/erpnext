@@ -1,0 +1,169 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-11-16 13:08:12.837599",
+  "name": "Inventory",
+  "role_profile": "Inventory",
+  "roles": [
+   {
+    "parent": "Inventory",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Item Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-11-16 13:08:12.844149",
+  "name": "Manufacturing",
+  "role_profile": "Manufacturing",
+  "roles": []
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-11-16 13:08:12.862383",
+  "name": "Sales",
+  "role_profile": "Sales",
+  "roles": [
+   {
+    "parent": "Sales",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Sales",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-11-16 13:08:12.867689",
+  "name": "Purchase",
+  "role_profile": "Purchase",
+  "roles": [
+   {
+    "parent": "Purchase",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Item Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-12-17 18:17:53.340504",
+  "name": "Accounts",
+  "role_profile": "Accounts",
+  "roles": [
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Website Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2024-12-12 19:43:30.549250",
+  "name": "Admin Accounts",
+  "role_profile": "Admin Accounts",
+  "roles": [
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Admin Accounts"
+   },
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "Admin Accounts",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Website Manager"
+   }
+  ]
+ }
+]

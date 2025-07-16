@@ -1,0 +1,167 @@
+[
+ {
+  "bank_name": "RHB BANK BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2024-12-12 19:24:39.105873",
+  "name": "RHB BANK BERHAD",
+  "plaid_access_token": null,
+  "swift_number": "RHBXXXMYKL",
+  "website": null
+ },
+ {
+  "bank_name": "AFFIN BANK BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.494960",
+  "name": "AFFIN BANK BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "ALLIANCE BANK MALAYSIA BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.511076",
+  "name": "ALLIANCE BANK MALAYSIA BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "AMBANK (M) BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.519386",
+  "name": "AMBANK (M) BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "CIMB BANK BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.526763",
+  "name": "CIMB BANK BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "CITIBANK BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.533710",
+  "name": "CITIBANK BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "HONG LEONG BANK BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.541319",
+  "name": "HONG LEONG BANK BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "HSBC BANK MALAYSIA BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.549276",
+  "name": "HSBC BANK MALAYSIA BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "MALAYAN BANKING BERHAD (MAYBANK)",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.555730",
+  "name": "MALAYAN BANKING BERHAD (MAYBANK)",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "OCBC BANK (MALAYSIA) BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.562053",
+  "name": "OCBC BANK (MALAYSIA) BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "STANDARD CHARTERED BANK MALAYSIA BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.584769",
+  "name": "STANDARD CHARTERED BANK MALAYSIA BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "UNITED OVERSEAS BANK (MALAYSIA) BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.615171",
+  "name": "UNITED OVERSEAS BANK (MALAYSIA) BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "PUBLIC BANK BERHAD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2025-05-08 02:11:41.569545",
+  "name": "PUBLIC BANK BERHAD",
+  "plaid_access_token": null,
+  "swift_number": null,
+  "website": null
+ },
+ {
+  "bank_name": "CIMB BHD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2024-12-10 00:26:38.933086",
+  "name": "CIMB BHD",
+  "plaid_access_token": null,
+  "swift_number": "CIMBXXKL",
+  "website": null
+ },
+ {
+  "bank_name": "MAYBANK BHD",
+  "bank_transaction_mapping": [],
+  "docstatus": 0,
+  "doctype": "Bank",
+  "modified": "2024-12-10 00:01:51.493220",
+  "name": "MAYBANK BHD",
+  "plaid_access_token": null,
+  "swift_number": "MYYKL",
+  "website": null
+ }
+]

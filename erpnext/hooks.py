@@ -9,7 +9,6 @@ app_license = "GNU General Public License (v3)"
 source_link = "https://github.com/frappe/erpnext"
 app_logo_url = "/assets/erpnext/images/erpnext-logo.svg"
 
-fixtures = ["Custom Field", "Property Setter"]
 fixtures = [
     {
         "dt": "Custom Field",
@@ -50,6 +49,27 @@ fixtures = [
             ]
         ],
     },
+    {
+        "dt": "State",
+    },
+    {
+        "dt": "City",
+    },
+    {
+        "dt": "Bank",
+    },
+    {
+        "dt": "Translation",
+    },
+    {
+        "dt": "System Settings",
+    },
+    {
+        "dt": "Role Profile",
+    },
+    {
+        "dt": "Workflow",
+    }
 ]
 
 add_to_apps_screen = [

@@ -1,0 +1,1442 @@
+[
+ {
+  "city": "Alor Setar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 16:00:09.631526",
+  "name": "Alor Setar",
+  "state": "Kedah"
+ },
+ {
+  "city": "Bukit Mertajam",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-21 15:27:13.608090",
+  "name": "Bukit Mertajam",
+  "state": "Penang"
+ },
+ {
+  "city": "Bakri",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.595172",
+  "name": "Bakri",
+  "state": "Johor"
+ },
+ {
+  "city": "Batu Pahat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.614546",
+  "name": "Batu Pahat",
+  "state": "Johor"
+ },
+ {
+  "city": "Buloh Kasap",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.618812",
+  "name": "Buloh Kasap",
+  "state": "Johor"
+ },
+ {
+  "city": "Chaah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.622568",
+  "name": "Chaah",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Batu Pahat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.629411",
+  "name": "Daerah Batu Pahat",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Johor Baharu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.635032",
+  "name": "Daerah Johor Baharu",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Keluang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.640502",
+  "name": "Daerah Keluang",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Kota Tinggi",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.644454",
+  "name": "Daerah Kota Tinggi",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Mersing",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.649668",
+  "name": "Daerah Mersing",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Muar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.654494",
+  "name": "Daerah Muar",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Pontian",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.659050",
+  "name": "Daerah Pontian",
+  "state": "Johor"
+ },
+ {
+  "city": "Daerah Segamat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.663658",
+  "name": "Daerah Segamat",
+  "state": "Johor"
+ },
+ {
+  "city": "Kampung Pasir Gudang Baru",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.669210",
+  "name": "Kampung Pasir Gudang Baru",
+  "state": "Johor"
+ },
+ {
+  "city": "Kampung Simpang Renggam",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.673671",
+  "name": "Kampung Simpang Renggam",
+  "state": "Johor"
+ },
+ {
+  "city": "Kelapa Sawit",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.678813",
+  "name": "Kelapa Sawit",
+  "state": "Johor"
+ },
+ {
+  "city": "Kluang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.682488",
+  "name": "Kluang",
+  "state": "Johor"
+ },
+ {
+  "city": "Kota Tinggi",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.686115",
+  "name": "Kota Tinggi",
+  "state": "Johor"
+ },
+ {
+  "city": "Kulai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.691280",
+  "name": "Kulai",
+  "state": "Johor"
+ },
+ {
+  "city": "Labis",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.695929",
+  "name": "Labis",
+  "state": "Johor"
+ },
+ {
+  "city": "Mersing",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.702292",
+  "name": "Mersing",
+  "state": "Johor"
+ },
+ {
+  "city": "Muar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.710721",
+  "name": "Muar",
+  "state": "Johor"
+ },
+ {
+  "city": "Parit Raja",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.716283",
+  "name": "Parit Raja",
+  "state": "Johor"
+ },
+ {
+  "city": "Pekan Nenas",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.722198",
+  "name": "Pekan Nenas",
+  "state": "Johor"
+ },
+ {
+  "city": "Pontian Kechil",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.728248",
+  "name": "Pontian Kechil",
+  "state": "Johor"
+ },
+ {
+  "city": "Segamat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.734354",
+  "name": "Segamat",
+  "state": "Johor"
+ },
+ {
+  "city": "Skudai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.740530",
+  "name": "Skudai",
+  "state": "Johor"
+ },
+ {
+  "city": "Taman Senai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.746112",
+  "name": "Taman Senai",
+  "state": "Johor"
+ },
+ {
+  "city": "Tangkak",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.750545",
+  "name": "Tangkak",
+  "state": "Johor"
+ },
+ {
+  "city": "Ulu Tiram",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.755558",
+  "name": "Ulu Tiram",
+  "state": "Johor"
+ },
+ {
+  "city": "Yong Peng",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:46.760757",
+  "name": "Yong Peng",
+  "state": "Johor"
+ },
+ {
+  "city": "Ayer Hangat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.685523",
+  "name": "Ayer Hangat",
+  "state": "Kedah"
+ },
+ {
+  "city": "Bedong",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.692294",
+  "name": "Bedong",
+  "state": "Kedah"
+ },
+ {
+  "city": "Gurun",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.697483",
+  "name": "Gurun",
+  "state": "Kedah"
+ },
+ {
+  "city": "Jitra",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.701438",
+  "name": "Jitra",
+  "state": "Kedah"
+ },
+ {
+  "city": "Kampung Kilim",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.706350",
+  "name": "Kampung Kilim",
+  "state": "Kedah"
+ },
+ {
+  "city": "Kampung Kok",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.712095",
+  "name": "Kampung Kok",
+  "state": "Kedah"
+ },
+ {
+  "city": "Kuah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.717891",
+  "name": "Kuah",
+  "state": "Kedah"
+ },
+ {
+  "city": "Kuala Kedah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.722446",
+  "name": "Kuala Kedah",
+  "state": "Kedah"
+ },
+ {
+  "city": "Kuala Teriang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.727391",
+  "name": "Kuala Teriang",
+  "state": "Kedah"
+ },
+ {
+  "city": "Kulim",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.733555",
+  "name": "Kulim",
+  "state": "Kedah"
+ },
+ {
+  "city": "Langkawi",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.738822",
+  "name": "Langkawi",
+  "state": "Kedah"
+ },
+ {
+  "city": "Padang Mat Sirat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.744094",
+  "name": "Padang Mat Sirat",
+  "state": "Kedah"
+ },
+ {
+  "city": "Sungai Petani",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:47.748360",
+  "name": "Sungai Petani",
+  "state": "Kedah"
+ },
+ {
+  "city": "Gua Musang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:48.680538",
+  "name": "Gua Musang",
+  "state": "Kelantan"
+ },
+ {
+  "city": "Kampong Kadok",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:48.685372",
+  "name": "Kampong Kadok",
+  "state": "Kelantan"
+ },
+ {
+  "city": "Kampong Pangkal Kalong",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:48.689963",
+  "name": "Kampong Pangkal Kalong",
+  "state": "Kelantan"
+ },
+ {
+  "city": "Kota Bharu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:48.693544",
+  "name": "Kota Bharu",
+  "state": "Kelantan"
+ },
+ {
+  "city": "Pasir Mas",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:48.698381",
+  "name": "Pasir Mas",
+  "state": "Kelantan"
+ },
+ {
+  "city": "Peringat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:48.707643",
+  "name": "Peringat",
+  "state": "Kelantan"
+ },
+ {
+  "city": "Tumpat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:48.713511",
+  "name": "Tumpat",
+  "state": "Kelantan"
+ },
+ {
+  "city": "Labuan",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:50.617169",
+  "name": "Labuan",
+  "state": "Labuan"
+ },
+ {
+  "city": "Alor Gajah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.537253",
+  "name": "Alor Gajah",
+  "state": "Melaka"
+ },
+ {
+  "city": "Batu Berendam",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.545642",
+  "name": "Batu Berendam",
+  "state": "Melaka"
+ },
+ {
+  "city": "Bemban",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.550658",
+  "name": "Bemban",
+  "state": "Melaka"
+ },
+ {
+  "city": "Bukit Rambai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.556212",
+  "name": "Bukit Rambai",
+  "state": "Melaka"
+ },
+ {
+  "city": "Kampong Masjid Tanah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.560518",
+  "name": "Kampong Masjid Tanah",
+  "state": "Melaka"
+ },
+ {
+  "city": "Kampung Ayer Keroh",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.566709",
+  "name": "Kampung Ayer Keroh",
+  "state": "Melaka"
+ },
+ {
+  "city": "Kampung Ayer Molek",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.570185",
+  "name": "Kampung Ayer Molek",
+  "state": "Melaka"
+ },
+ {
+  "city": "Kampung Bukit Baharu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.574447",
+  "name": "Kampung Bukit Baharu",
+  "state": "Melaka"
+ },
+ {
+  "city": "Klebang Besar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.578328",
+  "name": "Klebang Besar",
+  "state": "Melaka"
+ },
+ {
+  "city": "Kuala Sungai Baru",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.584304",
+  "name": "Kuala Sungai Baru",
+  "state": "Melaka"
+ },
+ {
+  "city": "Malacca",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.588501",
+  "name": "Malacca",
+  "state": "Melaka"
+ },
+ {
+  "city": "Pulau Sebang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.593207",
+  "name": "Pulau Sebang",
+  "state": "Melaka"
+ },
+ {
+  "city": "Sungai Udang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:51.598353",
+  "name": "Sungai Udang",
+  "state": "Melaka"
+ },
+ {
+  "city": "Bahau",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:52.510584",
+  "name": "Bahau",
+  "state": "Negeri Sembilan"
+ },
+ {
+  "city": "Kampung Baharu Nilai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:52.517984",
+  "name": "Kampung Baharu Nilai",
+  "state": "Negeri Sembilan"
+ },
+ {
+  "city": "Kuala Pilah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:52.523838",
+  "name": "Kuala Pilah",
+  "state": "Negeri Sembilan"
+ },
+ {
+  "city": "Port Dickson",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:52.532153",
+  "name": "Port Dickson",
+  "state": "Negeri Sembilan"
+ },
+ {
+  "city": "Seremban",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:52.537815",
+  "name": "Seremban",
+  "state": "Negeri Sembilan"
+ },
+ {
+  "city": "Tampin",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:52.542037",
+  "name": "Tampin",
+  "state": "Negeri Sembilan"
+ },
+ {
+  "city": "Bentong Town",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.451418",
+  "name": "Bentong Town",
+  "state": "Pahang"
+ },
+ {
+  "city": "Jerantut",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.457849",
+  "name": "Jerantut",
+  "state": "Pahang"
+ },
+ {
+  "city": "Kampung Bukit Tinggi, Bentong",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.461370",
+  "name": "Kampung Bukit Tinggi, Bentong",
+  "state": "Pahang"
+ },
+ {
+  "city": "Kampung Tekek",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.467894",
+  "name": "Kampung Tekek",
+  "state": "Pahang"
+ },
+ {
+  "city": "Kuala Lipis",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.472565",
+  "name": "Kuala Lipis",
+  "state": "Pahang"
+ },
+ {
+  "city": "Kuantan",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.477551",
+  "name": "Kuantan",
+  "state": "Pahang"
+ },
+ {
+  "city": "Mentekab",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.482887",
+  "name": "Mentekab",
+  "state": "Pahang"
+ },
+ {
+  "city": "Pekan",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.486810",
+  "name": "Pekan",
+  "state": "Pahang"
+ },
+ {
+  "city": "Raub",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.491674",
+  "name": "Raub",
+  "state": "Pahang"
+ },
+ {
+  "city": "Tanah Rata",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.495766",
+  "name": "Tanah Rata",
+  "state": "Pahang"
+ },
+ {
+  "city": "Temerluh",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:53.500355",
+  "name": "Temerluh",
+  "state": "Pahang"
+ },
+ {
+  "city": "Batu Feringgi",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.440319",
+  "name": "Batu Feringgi",
+  "state": "Penang"
+ },
+ {
+  "city": "Butterworth",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.447171",
+  "name": "Butterworth",
+  "state": "Penang"
+ },
+ {
+  "city": "George Town",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.453260",
+  "name": "George Town",
+  "state": "Penang"
+ },
+ {
+  "city": "Juru",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.457158",
+  "name": "Juru",
+  "state": "Penang"
+ },
+ {
+  "city": "Kampung Batu Feringgi",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.461967",
+  "name": "Kampung Batu Feringgi",
+  "state": "Penang"
+ },
+ {
+  "city": "Kampung Sungai Ara",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.467934",
+  "name": "Kampung Sungai Ara",
+  "state": "Penang"
+ },
+ {
+  "city": "Kepala Batas",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.472486",
+  "name": "Kepala Batas",
+  "state": "Penang"
+ },
+ {
+  "city": "Perai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.482950",
+  "name": "Perai",
+  "state": "Penang"
+ },
+ {
+  "city": "Permatang Kuching",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.488496",
+  "name": "Permatang Kuching",
+  "state": "Penang"
+ },
+ {
+  "city": "Seberang Perai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.492835",
+  "name": "Seberang Perai",
+  "state": "Penang"
+ },
+ {
+  "city": "Tanjung Tokong",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.498680",
+  "name": "Tanjung Tokong",
+  "state": "Penang"
+ },
+ {
+  "city": "Tasek Glugor",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.504151",
+  "name": "Tasek Glugor",
+  "state": "Penang"
+ },
+ {
+  "city": "Telaga Batu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.510899",
+  "name": "Telaga Batu",
+  "state": "Penang"
+ },
+ {
+  "city": "Bagan Serai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.454250",
+  "name": "Bagan Serai",
+  "state": "Perak"
+ },
+ {
+  "city": "Batu Gajah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.459581",
+  "name": "Batu Gajah",
+  "state": "Perak"
+ },
+ {
+  "city": "Bidur",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.465322",
+  "name": "Bidur",
+  "state": "Perak"
+ },
+ {
+  "city": "Kampar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.470736",
+  "name": "Kampar",
+  "state": "Perak"
+ },
+ {
+  "city": "Kampong Dungun",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.476124",
+  "name": "Kampong Dungun",
+  "state": "Perak"
+ },
+ {
+  "city": "Kuala Kangsar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.480396",
+  "name": "Kuala Kangsar",
+  "state": "Perak"
+ },
+ {
+  "city": "Lumut",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.486292",
+  "name": "Lumut",
+  "state": "Perak"
+ },
+ {
+  "city": "Pantai Remis",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.491140",
+  "name": "Pantai Remis",
+  "state": "Perak"
+ },
+ {
+  "city": "Parit Buntar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.496430",
+  "name": "Parit Buntar",
+  "state": "Perak"
+ },
+ {
+  "city": "Simpang Empat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.501704",
+  "name": "Simpang Empat",
+  "state": "Perak"
+ },
+ {
+  "city": "Taiping",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.505828",
+  "name": "Taiping",
+  "state": "Perak"
+ },
+ {
+  "city": "Tapah Road",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.511547",
+  "name": "Tapah Road",
+  "state": "Perak"
+ },
+ {
+  "city": "Teluk Intan",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:55.516889",
+  "name": "Teluk Intan",
+  "state": "Perak"
+ },
+ {
+  "city": "Kangar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:56.466043",
+  "name": "Kangar",
+  "state": "Perlis"
+ },
+ {
+  "city": "Kuala Perlis",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:56.471012",
+  "name": "Kuala Perlis",
+  "state": "Perlis"
+ },
+ {
+  "city": "Pantai Cenang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:56.475691",
+  "name": "Pantai Cenang",
+  "state": "Perlis"
+ },
+ {
+  "city": "Putrajaya",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:57.378160",
+  "name": "Putrajaya",
+  "state": "Putrajaya"
+ },
+ {
+  "city": "Bandar Labuan",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.301657",
+  "name": "Bandar Labuan",
+  "state": "Sabah"
+ },
+ {
+  "city": "Beaufort",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.308992",
+  "name": "Beaufort",
+  "state": "Sabah"
+ },
+ {
+  "city": "Donggongon",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.314499",
+  "name": "Donggongon",
+  "state": "Sabah"
+ },
+ {
+  "city": "Keningau",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.320048",
+  "name": "Keningau",
+  "state": "Sabah"
+ },
+ {
+  "city": "Kinarut",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.324110",
+  "name": "Kinarut",
+  "state": "Sabah"
+ },
+ {
+  "city": "Kota Belud",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.330723",
+  "name": "Kota Belud",
+  "state": "Sabah"
+ },
+ {
+  "city": "Kota Kinabalu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.335464",
+  "name": "Kota Kinabalu",
+  "state": "Sabah"
+ },
+ {
+  "city": "Kudat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.340916",
+  "name": "Kudat",
+  "state": "Sabah"
+ },
+ {
+  "city": "Lahad Datu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.346967",
+  "name": "Lahad Datu",
+  "state": "Sabah"
+ },
+ {
+  "city": "Papar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.351829",
+  "name": "Papar",
+  "state": "Sabah"
+ },
+ {
+  "city": "Putatan",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.356308",
+  "name": "Putatan",
+  "state": "Sabah"
+ },
+ {
+  "city": "Ranau",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.361219",
+  "name": "Ranau",
+  "state": "Sabah"
+ },
+ {
+  "city": "Sandakan",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.366155",
+  "name": "Sandakan",
+  "state": "Sabah"
+ },
+ {
+  "city": "Semporna",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.371960",
+  "name": "Semporna",
+  "state": "Sabah"
+ },
+ {
+  "city": "Taman Rajawali",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.375436",
+  "name": "Taman Rajawali",
+  "state": "Sabah"
+ },
+ {
+  "city": "Tawau",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:58.379549",
+  "name": "Tawau",
+  "state": "Sabah"
+ },
+ {
+  "city": "Bintulu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.288929",
+  "name": "Bintulu",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Data Kakus",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.297417",
+  "name": "Data Kakus",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Kapit",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.301355",
+  "name": "Kapit",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Kuching",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.306699",
+  "name": "Kuching",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Lawas",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.310749",
+  "name": "Lawas",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Lidung Jelo",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.318194",
+  "name": "Lidung Jelo",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Limbang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.324100",
+  "name": "Limbang",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Long Ampan Aing or Abanang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.328808",
+  "name": "Long Ampan Aing or Abanang",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Marudi",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.333664",
+  "name": "Marudi",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Miri",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.338167",
+  "name": "Miri",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Mukah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.342195",
+  "name": "Mukah",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Sarikei",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.348068",
+  "name": "Sarikei",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Sibu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.354387",
+  "name": "Sibu",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Simanggang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:59.360461",
+  "name": "Simanggang",
+  "state": "Sarawak"
+ },
+ {
+  "city": "Bagan Pulau Ketam",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.305415",
+  "name": "Bagan Pulau Ketam",
+  "state": "Selangor"
+ },
+ {
+  "city": "Banting",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.310948",
+  "name": "Banting",
+  "state": "Selangor"
+ },
+ {
+  "city": "Batang Berjuntai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.316744",
+  "name": "Batang Berjuntai",
+  "state": "Selangor"
+ },
+ {
+  "city": "Batu Arang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.321658",
+  "name": "Batu Arang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Jenjarum",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.326772",
+  "name": "Jenjarum",
+  "state": "Selangor"
+ },
+ {
+  "city": "Kampong Baharu Balakong",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.331485",
+  "name": "Kampong Baharu Balakong",
+  "state": "Selangor"
+ },
+ {
+  "city": "Kampung Baru Subang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.335365",
+  "name": "Kampung Baru Subang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Kampung Tanjung Karang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.340827",
+  "name": "Kampung Tanjung Karang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Kuala Selangor",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.345953",
+  "name": "Kuala Selangor",
+  "state": "Selangor"
+ },
+ {
+  "city": "Kuang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.349865",
+  "name": "Kuang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Ladang Seri Kundang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.354115",
+  "name": "Ladang Seri Kundang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Pelabuhan Klang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.359661",
+  "name": "Pelabuhan Klang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Putra Heights",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.366060",
+  "name": "Putra Heights",
+  "state": "Selangor"
+ },
+ {
+  "city": "Semenyih",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.376917",
+  "name": "Semenyih",
+  "state": "Selangor"
+ },
+ {
+  "city": "Serendah",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.382459",
+  "name": "Serendah",
+  "state": "Selangor"
+ },
+ {
+  "city": "Shah Alam",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.390184",
+  "name": "Shah Alam",
+  "state": "Selangor"
+ },
+ {
+  "city": "Subang Jaya",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.395928",
+  "name": "Subang Jaya",
+  "state": "Selangor"
+ },
+ {
+  "city": "Sungai Besar",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.400465",
+  "name": "Sungai Besar",
+  "state": "Selangor"
+ },
+ {
+  "city": "Sungai Pelek New Village",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.406003",
+  "name": "Sungai Pelek New Village",
+  "state": "Selangor"
+ },
+ {
+  "city": "Tanjung Sepat",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.410652",
+  "name": "Tanjung Sepat",
+  "state": "Selangor"
+ },
+ {
+  "city": "Cukai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.391312",
+  "name": "Cukai",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Jertih",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.396659",
+  "name": "Jertih",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Kampung Kuala Besut",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.401625",
+  "name": "Kampung Kuala Besut",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Kertih",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.407725",
+  "name": "Kertih",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Kuala Besut",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.413307",
+  "name": "Kuala Besut",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Kuala Terengganu",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.418888",
+  "name": "Kuala Terengganu",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Marang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.423930",
+  "name": "Marang",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Paka",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.428600",
+  "name": "Paka",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Petaling Jaya",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 16:08:14.466246",
+  "name": "Petaling Jaya",
+  "state": "Selangor"
+ },
+ {
+  "city": "Nibong Tebal",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:43:54.477892",
+  "name": "Nibong Tebal",
+  "state": "Penang"
+ },
+ {
+  "city": "Rawang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.370808",
+  "name": "Rawang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Ampang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.299574",
+  "name": "Ampang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Masai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2025-03-21 21:29:58.267767",
+  "name": "Masai",
+  "state": "Johor"
+ },
+ {
+  "city": "Ipoh",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 16:05:32.088385",
+  "name": "Ipoh",
+  "state": "Perak"
+ },
+ {
+  "city": "Kuala Lumpur",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 16:01:50.817718",
+  "name": "Kuala Lumpur",
+  "state": "Kuala Lumpur"
+ },
+ {
+  "city": "Klang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 16:08:26.947354",
+  "name": "Klang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Johor Bahru",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 15:59:17.766427",
+  "name": "Johor Bahru",
+  "state": "Johor"
+ }
+]
