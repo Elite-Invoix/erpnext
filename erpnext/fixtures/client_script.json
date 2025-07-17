@@ -343,17 +343,6 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
-  "dt": "Company",
-  "enabled": 1,
-  "modified": "2025-02-12 22:24:06.034570",
-  "module": null,
-  "name": "Country code",
-  "script": "frappe.ui.form.on(\"Company\", {\n    onload: function(frm) {\n        if (frm.doc.country == \"Malaysia\" && !frm.doc.custom_contact_number) {\n            frm.set_value(\"custom_contact_number\", \"+60-\");\n        }\n    },\n    before_save: function(frm) {\n        if (frm.doc.custom_contact_number == \"+60-\") {\n            frm.set_value(\"custom_contact_number\", \"\");\n        }\n    }\n});\n",
-  "view": "Form"
- },
- {
-  "docstatus": 0,
-  "doctype": "Client Script",
   "dt": "Customer",
   "enabled": 1,
   "modified": "2025-04-09 19:36:02.227777",
