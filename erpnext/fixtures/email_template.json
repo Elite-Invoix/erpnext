@@ -1,0 +1,42 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2024-11-17 14:36:26.433357",
+  "name": "Dispatch Notification",
+  "response": "<h1>Dispatch Notification</h1>\n<h3>Details:</h3>\n<table class=\"table table-bordered small\" style=\"max-width: 500px;\">\n    <tbody>\n        <tr>\n            <td>Customer's Name</td>\n            <td>{{ customer }}</td>\n        </tr>\n        <tr>\n            <td>Contact's Name</td>\n            <td>{{ first_name }} {{ last_name }}</td>\n        </tr>\n        <tr>\n            <td>Address Name</td>\n            <td>{{ address }}</td>\n        </tr>\n        <tr>\n            <td>Address Details</td>\n            <td>{{ customer_address }}</td>\n        </tr>\n        <tr>\n            <td>Order Number</td>\n            <td>{{ delivery_note }}</td>\n        </tr>\n        <tr>\n            <td>Order Total</td>\n            <td>{{ grand_total }}</td>\n        </tr>\n        <tr>\n            <td>Departure Time</td>\n            <td>{{ departure_time }}</td>\n        </tr>\n        <tr>\n            <td>Estimated Arrival</td>\n            <td>{{ estimated_arrival }}</td>\n        </tr>\n        <tr>\n            <td>Driver's Name</td>\n            <td>{{ driver_name }}</td>\n        </tr>\n        <tr>\n            <td>Driver's Number</td>\n            <td>{{ cell_number }}</td>\n        </tr>\n        <tr>\n            <td>Vehicle Number</td>\n            <td>{{ vehicle }}</td>\n        </tr>\n    </tbody>\n</table>\n",
+  "response_html": null,
+  "subject": "Your order is out for delivery!",
+  "use_html": 0
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2024-12-09 19:32:40.306561",
+  "name": "Send Subscription Link",
+  "response": "<div class=\"ql-editor read-mode\"><p>&lt;p&gt;Dear {{ user }},&lt;/p&gt;</p><p><br></p><p>&lt;p&gt;Welcome to Invoix.biz!&lt;/p&gt;</p><p><br></p><p>&lt;p&gt;To complete your subscription, please confirm your payment by clicking </p><p>the link below and following the steps to make your payment:&lt;/p&gt;</p><p><br></p><p>&lt;p&gt;&lt;a href=\"{{ payment_link }}\" target=\"_blank\"&gt;[Payment Link]&lt;/a&gt;&lt;/p&gt;</p><p><br></p><p>&lt;p&gt;Once your payment is confirmed, we will send your login credentials to </p><p>your registered email address.&lt;/p&gt;</p><p><br></p><p>&lt;p&gt;If you have any questions or need assistance, feel free to contact our </p><p>support team.&lt;/p&gt;</p><p><br></p><p>&lt;p&gt;Thank you for choosing Invoix.biz!&lt;/p&gt;</p><p><br></p><p>&lt;p&gt;Best regards,&lt;/p&gt;</p><p>&lt;p&gt;&lt;strong&gt;Invoix.biz Support Team&lt;/strong&gt;&lt;br&gt;</p><p>Email: &lt;a href=\"mailto:admin@invoix.biz\"&gt;admin@invoix.biz&lt;/a&gt;&lt;/p&gt;</p><p><br></p></div>",
+  "response_html": "<p>Dear {{ user }},</p>\n\n<p>Welcome to Invoix.biz!</p>\n\n<p>To complete your subscription, please confirm your payment by clicking \nthe link below and following the steps to make your payment:</p>\n\n<p><a href=\"{{ payment_link }}\" target=\"_blank\">[Payment Link]</a></p>\n\n<p>Once your payment is confirmed, we will send your login credentials to \nyour registered email address.</p>\n\n<p>If you have any questions or need assistance, feel free to contact our \nsupport team.</p>\n\n<p>Thank you for choosing Invoix.biz!</p>\n\n<p>Best regards,</p>\n<p><strong>Invoix.biz Support Team</strong><br>\nEmail: <a href=\"mailto:admin@invoix.biz\">admin@invoix.biz</a></p>\n",
+  "subject": "Payment Confirmation for Your Invoix.biz Subscription",
+  "use_html": 1
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2024-12-09 19:36:34.584643",
+  "name": "Subscription Confirmed",
+  "response": null,
+  "response_html": "<p>Dear {{ user }},</p>\n\n<p>Congratulations! Your payment has been successfully confirmed, and we’re excited to welcome you to Invoix.biz, your trusted cloud-based invoicing solution.</p>\n\n<h3>Your Account Credentials</h3>\n<p>\n<strong>Username:</strong> {{ username }}<br>\n<strong>Temporary Password:</strong> {{ password }}<br>\n<strong>Login URL:</strong> <a href=\"https://app.invoix.bz\" target=\"_blank\">https://app.invoix.bz</a>\n</p>\n<p><strong>Important:</strong> For your security, please log in and update your password immediately after your first login.</p>\n\n<h3>Getting Started Guides</h3>\n<p>To help you get started, we’ve provided step-by-step guides:</p>\n<ul>\n    <li><a href=\"#\" target=\"_blank\">How to Set Merchant Profile</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Create Product and Inventory</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Create Buyer</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Create Invoice</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Create Debit Note</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Create Credit Note</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Create Return Note</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Cancel the Invoice</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Create Quotation</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Download Report</a></li>\n    <li><a href=\"#\" target=\"_blank\">How to Capture Expenses</a></li>\n</ul>\n\n<h3>Need Help?</h3>\n<p>Our support team is here to assist you:</p>\n<p><strong>Email:</strong> <a href=\"mailto:admin@invoix.biz\">admin@invoix.biz</a><br>\n<strong>Support Hours:</strong> Monday to Friday, 9:00 AM – 6:00 PM</p>\n\n<p>Thank you for choosing Invoix.biz. We’re thrilled to help you simplify your business processes and achieve greater efficiency!</p>\n\n<p>Best regards,<br>\n<strong>The Invoix.biz Team</strong></p>\n",
+  "subject": "Welcome to Invoix.biz – Your Subscription is Confirmed!",
+  "use_html": 1
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Email Template",
+  "modified": "2024-12-18 20:40:15.676417",
+  "name": "Payment Request",
+  "response": "<div class=\"ql-editor read-mode\"><p>Dear Customer,</p><p><br></p><p>Please complete your payment by clicking on the link below:</p><p><br></p><p>{{ payment_link }}</p><p><br></p><p>If you have any questions, feel free to contact us.</p><p><br></p><p>Thank you for your business!</p><p><br></p><p>Best regards, &nbsp;</p><p>{{ company_name }}</p><p><br></p></div>",
+  "response_html": null,
+  "subject": "Payment Request for Invoice {invoice_number}",
+  "use_html": 0
+ }
+]

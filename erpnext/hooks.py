@@ -30,7 +30,7 @@ fixtures = [
     },
     {"dt": "Custom HTML Block"},
     {"dt": "Custom DocPerm"},
-    {"dt": "User Permission"},
+    # {"dt": "User Permission"},
     {
         "dt": "Workspace",
         "filters": [
@@ -72,6 +72,9 @@ fixtures = [
     },
     {
         "dt": "Subscription Module",
+    },
+    {
+        "dt": "Email Template",
     }
 ]
 
