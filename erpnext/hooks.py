@@ -69,6 +69,9 @@ fixtures = [
     },
     {
         "dt": "Workflow",
+    },
+    {
+        "dt": "Subscription Module",
     }
 ]
 

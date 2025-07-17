@@ -1304,14 +1304,6 @@
   "state": "Selangor"
  },
  {
-  "city": "Cukai",
-  "docstatus": 0,
-  "doctype": "City",
-  "modified": "2024-12-19 17:44:01.391312",
-  "name": "Cukai",
-  "state": "Terengganu"
- },
- {
   "city": "Jertih",
   "docstatus": 0,
   "doctype": "City",
@@ -1438,5 +1430,13 @@
   "modified": "2024-11-20 15:59:17.766427",
   "name": "Johor Bahru",
   "state": "Johor"
+ },
+ {
+  "city": "Cukai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.391312",
+  "name": "Cukai",
+  "state": "Terengganu"
  }
 ]
