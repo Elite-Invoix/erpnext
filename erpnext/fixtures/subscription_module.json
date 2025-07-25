@@ -1,0 +1,28 @@
+[
+ {
+  "active": 1,
+  "docstatus": 0,
+  "doctype": "Subscription Module",
+  "max_invoices": 3000,
+  "max_products": 3000,
+  "max_quotations": 3000,
+  "max_users": 5,
+  "modified": "2024-12-13 19:54:46.340472",
+  "name": "Standard",
+  "plan_name": "Standard",
+  "plan_type": "Standard"
+ },
+ {
+  "active": 1,
+  "docstatus": 0,
+  "doctype": "Subscription Module",
+  "max_invoices": 1200,
+  "max_products": 1200,
+  "max_quotations": 1200,
+  "max_users": 2,
+  "modified": "2024-12-13 19:55:08.469565",
+  "name": "Basic",
+  "plan_name": "Basic",
+  "plan_type": "Basic"
+ }
+]
