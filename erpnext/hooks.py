@@ -87,6 +87,9 @@ fixtures = [
     },
     {
         "dt": "Module Profile",
+    },
+    {
+        "dt": "Price List",
     }
 ]
 
