@@ -1,0 +1,80 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Item Group",
+  "image": null,
+  "is_group": 1,
+  "item_group_defaults": [],
+  "item_group_name": "All Item Groups",
+  "modified": "2024-11-17 14:36:24.605022",
+  "name": "All Item Groups",
+  "old_parent": "",
+  "parent_item_group": "",
+  "taxes": []
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Item Group",
+  "image": null,
+  "is_group": 0,
+  "item_group_defaults": [],
+  "item_group_name": "Sub Assemblies",
+  "modified": "2024-11-17 14:36:24.675017",
+  "name": "Sub Assemblies",
+  "old_parent": "All Item Groups",
+  "parent_item_group": "All Item Groups",
+  "taxes": []
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Item Group",
+  "image": null,
+  "is_group": 0,
+  "item_group_defaults": [],
+  "item_group_name": "Consumable",
+  "modified": "2024-11-17 14:36:24.690974",
+  "name": "Consumable",
+  "old_parent": "All Item Groups",
+  "parent_item_group": "All Item Groups",
+  "taxes": []
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Item Group",
+  "image": null,
+  "is_group": 0,
+  "item_group_defaults": [],
+  "item_group_name": "Raw Material",
+  "modified": "2024-11-17 14:36:24.646162",
+  "name": "Raw Material",
+  "old_parent": "All Item Groups",
+  "parent_item_group": "All Item Groups",
+  "taxes": []
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Item Group",
+  "image": null,
+  "is_group": 0,
+  "item_group_defaults": [],
+  "item_group_name": "Services",
+  "modified": "2024-11-17 14:36:24.660630",
+  "name": "Services",
+  "old_parent": "All Item Groups",
+  "parent_item_group": "All Item Groups",
+  "taxes": []
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Item Group",
+  "image": null,
+  "is_group": 0,
+  "item_group_defaults": [],
+  "item_group_name": "Products",
+  "modified": "2024-11-17 14:36:24.627516",
+  "name": "Products",
+  "old_parent": "All Item Groups",
+  "parent_item_group": "All Item Groups",
+  "taxes": []
+ }
+]
