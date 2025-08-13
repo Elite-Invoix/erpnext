@@ -75,6 +75,18 @@ fixtures = [
     },
     {
         "dt": "Email Template",
+    },
+    {
+        "dt": "Item Group",
+    },
+    {
+        "dt": "Workflow State",
+    },
+    {
+        "dt": "UOM",
+    },
+    {
+        "dt": "Module Profile",
     }
 ]
 
