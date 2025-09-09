@@ -1232,14 +1232,6 @@
   "state": "Selangor"
  },
  {
-  "city": "Pelabuhan Klang",
-  "docstatus": 0,
-  "doctype": "City",
-  "modified": "2024-12-19 17:44:00.359661",
-  "name": "Pelabuhan Klang",
-  "state": "Selangor"
- },
- {
   "city": "Putra Heights",
   "docstatus": 0,
   "doctype": "City",
@@ -1392,14 +1384,6 @@
   "state": "Selangor"
  },
  {
-  "city": "Masai",
-  "docstatus": 0,
-  "doctype": "City",
-  "modified": "2025-03-21 21:29:58.267767",
-  "name": "Masai",
-  "state": "Johor"
- },
- {
   "city": "Ipoh",
   "docstatus": 0,
   "doctype": "City",
@@ -1408,20 +1392,20 @@
   "state": "Perak"
  },
  {
-  "city": "Kuala Lumpur",
-  "docstatus": 0,
-  "doctype": "City",
-  "modified": "2024-11-20 16:01:50.817718",
-  "name": "Kuala Lumpur",
-  "state": "Kuala Lumpur"
- },
- {
   "city": "Klang",
   "docstatus": 0,
   "doctype": "City",
   "modified": "2024-11-20 16:08:26.947354",
   "name": "Klang",
   "state": "Selangor"
+ },
+ {
+  "city": "Kuala Lumpur",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 16:01:50.817718",
+  "name": "Kuala Lumpur",
+  "state": "Kuala Lumpur"
  },
  {
   "city": "Johor Bahru",
@@ -1438,5 +1422,21 @@
   "modified": "2024-12-19 17:44:01.391312",
   "name": "Cukai",
   "state": "Terengganu"
+ },
+ {
+  "city": "Pelabuhan Klang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.359661",
+  "name": "Pelabuhan Klang",
+  "state": "Selangor"
+ },
+ {
+  "city": "Masai",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2025-03-21 21:29:58.267767",
+  "name": "Masai",
+  "state": "Johor"
  }
 ]

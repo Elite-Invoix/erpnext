@@ -44,6 +44,10 @@ def get_data():
     defaults = get_defaults()
     SALES_INVOICE = frappe.qb.DocType("Sales Invoice")
     # get top 20 customers by sales amount for last 12 months
+    customers = frappe.get_list("Customer",pluck="name")
+    if not customers:
+        return []
+
     query = (
         frappe.qb.from_(SALES_INVOICE)
         .select(
@@ -56,6 +60,7 @@ def get_data():
             & (SALES_INVOICE.posting_date >= add_days(getdate(), -365))
             & (SALES_INVOICE.posting_date <= getdate())
         )
+        .where(SALES_INVOICE.customer.isin(customers))
         .groupby(SALES_INVOICE.customer)
         .orderby(Sum(SALES_INVOICE.grand_total), order=frappe.qb.desc)
         .limit(10)

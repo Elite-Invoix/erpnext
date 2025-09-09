@@ -107,6 +107,14 @@
   "country": "Malaysia",
   "docstatus": 0,
   "doctype": "State",
+  "modified": "2024-11-20 13:17:21.971583",
+  "name": "Kuala Lumpur",
+  "state": "Kuala Lumpur"
+ },
+ {
+  "country": "Malaysia",
+  "docstatus": 0,
+  "doctype": "State",
   "modified": "2024-11-20 13:16:59.841250",
   "name": "Selangor",
   "state": "Selangor"
@@ -118,13 +126,5 @@
   "modified": "2024-11-20 12:53:01.197552",
   "name": "Johor",
   "state": "Johor"
- },
- {
-  "country": "Malaysia",
-  "docstatus": 0,
-  "doctype": "State",
-  "modified": "2024-11-20 13:17:21.971583",
-  "name": "Kuala Lumpur",
-  "state": "Kuala Lumpur"
  }
 ]

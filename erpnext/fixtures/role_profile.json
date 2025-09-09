@@ -112,6 +112,81 @@
  {
   "docstatus": 0,
   "doctype": "Role Profile",
+  "modified": "2025-08-20 03:11:10.026350",
+  "name": "Admin",
+  "role_profile": "Admin",
+  "roles": [
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Admin"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Website Manager"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Script Manager"
+   },
+   {
+    "parent": "Admin",
+    "parentfield": "roles",
+    "parenttype": "Role Profile",
+    "role": "Admin Accounts"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
   "modified": "2024-12-12 19:43:30.549250",
   "name": "Admin Accounts",
   "role_profile": "Admin Accounts",

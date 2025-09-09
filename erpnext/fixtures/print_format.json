@@ -1028,7 +1028,7 @@
   "css": null,
   "custom_format": 1,
   "default_print_language": null,
-  "disabled": 1,
+  "disabled": 0,
   "doc_type": "POS Invoice",
   "docstatus": 0,
   "doctype": "Print Format",

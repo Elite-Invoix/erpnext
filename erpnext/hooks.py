@@ -62,9 +62,6 @@ fixtures = [
         "dt": "Translation",
     },
     {
-        "dt": "System Settings",
-    },
-    {
         "dt": "Role Profile",
     },
     {

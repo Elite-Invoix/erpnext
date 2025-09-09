@@ -118,7 +118,7 @@ class Quotation(SellingController):
 			self.indicator_title = "Expired"
 
 	#def before_save(self):
-	#	max_quota = frappe.db.get_value("Quota Usage", self.company, "max_quotes")
+	#	max_quota = frappe.db.get_value("Quota Usage", self.company, "max_quotations")
 	#	available_quota = frappe.db.get_value("Quota Usage", self.company, "av_quotes")
 	#	if max_quota <= available_quota:
 	#		frappe.throw(_(f"You have reached the maximum number of quotes allowed. <br>Max quotes: {max_quota}, Current quotes: {available_quota}"))
@@ -137,7 +137,7 @@ class Quotation(SellingController):
 			if not company:
 				frappe.throw(_("Unable to fetch the company. Please set a default company for the user."))
 
-			max_quota = frappe.db.get_value("Quota usage", company, "max_quotes")
+			max_quota = frappe.db.get_value("Quota usage", company, "max_quotations")
 			available_quota = frappe.db.get_value("Quota usage", company, "av_quotes")
 
 			# Ensure the fetched values are not None and are integers
