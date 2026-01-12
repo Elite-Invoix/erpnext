@@ -92,7 +92,7 @@
  },
  {
   "charts": [],
-  "content": "[{\"id\":\"ZPr0qPB9uY\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales</span>\",\"col\":12}},{\"id\":\"GvOrSZAsZv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"eZhwaLmg90\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"tgmqsYXp01\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Invoice\",\"col\":3}}]",
+  "content": "[{\"id\":\"ZPr0qPB9uY\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sales</span>\",\"col\":12}},{\"id\":\"GvOrSZAsZv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customers\",\"col\":3}},{\"id\":\"eZhwaLmg90\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"tgmqsYXp01\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Invoice\",\"col\":3}},{\"id\":\"nS67TP4d1B\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Consolidated Sales Invoice\",\"col\":3}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -103,7 +103,7 @@
   "is_hidden": 0,
   "label": "Sales",
   "links": [],
-  "modified": "2025-07-15 15:24:05.943310",
+  "modified": "2025-11-12 02:56:12.510542",
   "module": "",
   "name": "Sales",
   "number_cards": [],
@@ -127,6 +127,22 @@
   ],
   "sequence_id": 38.0,
   "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Consolidated Sales Invoice",
+    "link_to": "Consolidated Sales Invoice",
+    "parent": "Sales",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
    {
     "color": "Grey",
     "doc_view": "List",

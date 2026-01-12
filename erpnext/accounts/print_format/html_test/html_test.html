@@ -109,7 +109,14 @@
         </div>
     </div>
     <div class="total-words"> <p><strong><i>{{frappe.utils.money_in_words(doc.grand_total,"Ringgit Malaysia:")}} </i></strong></p></div>
-   <div class="no-page-break">
+   {% if doc.custom_invoice_remarks %}
+    <div class="remarks">
+        <p><strong>Remarks:</strong></p>
+        <pre style="white-space: pre-wrap; font-family: inherit;">{{ doc.custom_invoice_remarks }}</pre>
+        <hr>
+    </div>
+    {% endif %}
+    <div class="no-page-break">
     <div class="contact-info">
         Thank you for your business! <br>
         We appreciate your trust in {{ company.name }}. If you have any questions or need assistance, feel free to contact us at {{company.custom_email_address}}<br>
