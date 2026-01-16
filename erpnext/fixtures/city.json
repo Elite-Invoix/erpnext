@@ -1296,14 +1296,6 @@
   "state": "Selangor"
  },
  {
-  "city": "Jertih",
-  "docstatus": 0,
-  "doctype": "City",
-  "modified": "2024-12-19 17:44:01.396659",
-  "name": "Jertih",
-  "state": "Terengganu"
- },
- {
   "city": "Kampung Kuala Besut",
   "docstatus": 0,
   "doctype": "City",
@@ -1376,14 +1368,6 @@
   "state": "Selangor"
  },
  {
-  "city": "Ampang",
-  "docstatus": 0,
-  "doctype": "City",
-  "modified": "2024-12-19 17:44:00.299574",
-  "name": "Ampang",
-  "state": "Selangor"
- },
- {
   "city": "Ipoh",
   "docstatus": 0,
   "doctype": "City",
@@ -1408,14 +1392,6 @@
   "state": "Kuala Lumpur"
  },
  {
-  "city": "Johor Bahru",
-  "docstatus": 0,
-  "doctype": "City",
-  "modified": "2024-11-20 15:59:17.766427",
-  "name": "Johor Bahru",
-  "state": "Johor"
- },
- {
   "city": "Cukai",
   "docstatus": 0,
   "doctype": "City",
@@ -1438,5 +1414,29 @@
   "modified": "2025-03-21 21:29:58.267767",
   "name": "Masai",
   "state": "Johor"
+ },
+ {
+  "city": "Jertih",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:01.396659",
+  "name": "Jertih",
+  "state": "Terengganu"
+ },
+ {
+  "city": "Johor Bahru",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-11-20 15:59:17.766427",
+  "name": "Johor Bahru",
+  "state": "Johor"
+ },
+ {
+  "city": "Ampang",
+  "docstatus": 0,
+  "doctype": "City",
+  "modified": "2024-12-19 17:44:00.299574",
+  "name": "Ampang",
+  "state": "Selangor"
  }
 ]
